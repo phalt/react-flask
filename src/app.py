@@ -23,9 +23,10 @@ class App(flask.Flask):
 
 app = App(
     __name__,
-    static_folder=abspath(join(dirname(dirname(__file__)), "static")),
-    template_folder=abspath(join(dirname(dirname(__file__)), "template")),
+    static_folder=abspath(join(dirname(__file__), "static")),
+    template_folder=abspath(join(dirname(__file__), "template")),
 )
+
 from src import views
 
 

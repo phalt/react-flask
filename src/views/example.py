@@ -7,12 +7,14 @@ import attrs
 from src.apis.blueprint import Blueprint
 from src.apis.types import APIResponse
 from src.app import app
+from src.render_react.renderer import render_html
 
 blueprint = Blueprint("example", __name__, url_prefix="/example")
 
 
 @blueprint.route("/")
-def basic_page():
+@render_html()
+def base_page():
     """
     This is your standard flask route and just returns a simple template file.
     """
