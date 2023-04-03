@@ -7,7 +7,7 @@ import attrs
 from src.apis.blueprint import Blueprint
 from src.apis.types import APIResponse
 from src.app import app
-from src.render_react.renderer import render_html
+from src.render_react.renderer import render_html, render_react
 
 blueprint = Blueprint("example", __name__, url_prefix="/example")
 
@@ -45,6 +45,17 @@ def post_example(parameter_one: str) -> PostRouteResponse:
     This is an example API GET route.
     """
     return PostRouteResponse(result=parameter_one)
+
+
+@attrs.define
+class ExamplePageProps:
+    good: str
+
+
+@blueprint.route("/react")
+@render_react()
+def react_example() -> ExamplePageProps:
+    return ExamplePageProps(good="day")
 
 
 app.register_blueprint(blueprint)
