@@ -12,11 +12,11 @@ class App(flask.Flask):
     def run(self, *args, **kwargs):
         # Only generate types files in development
         if settings.in_dev_environment:
-            from src.apis.types_manager import write_types
+            from src.apis.types_manager import api_route_type_manager
 
             log.info(app.url_map)
 
-            write_types()
+            api_route_type_manager.write_types()
 
         return super().run(*args, **kwargs)
 

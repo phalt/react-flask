@@ -28,10 +28,6 @@ from src.utils import unwrap
 log = structlog.get_logger(__name__)
 
 
-def write_types():
-    log.info("Generating API Types...")
-
-
 def _stringify_code_location(code: CodeType) -> str:
     """
     Takes a CodeType object and produces a string location of that code.
@@ -71,9 +67,7 @@ class APIRouteTypeManager:
     def get_types_path(cls) -> str:
         from src.app import app
 
-        return os.path.abspath(
-            os.path.join(app.root_path, "..", "js", "api", "types.ts")
-        )
+        return os.path.abspath(os.path.join(app.root_path, "js", "api", "types.ts"))
 
     def _get_unique_name(self, name: str) -> str:
         name = name[0].upper() + name[1:]
@@ -114,6 +108,7 @@ class APIRouteTypeManager:
         }
 
     def write_types(self) -> None:
+        log.info("Generating types...")
         with open(self.get_types_path(), "w") as fh:
             fh.write(self.generate_types())
 
