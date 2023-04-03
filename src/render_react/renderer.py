@@ -120,7 +120,7 @@ class render_react:
             response = view_function(*args, **kwargs)
 
             render_react_context = {
-                "react_entrypoint_filename": f"js/template/{self.module}/{self.name}.tsx",
+                "react_entrypoint_filename": f"src/js/template/{self.module}/{self.name}.tsx",
                 "base_data": {
                     "urlMap": api_route_type_manager.get_url_map(),
                 },

@@ -1,3 +1,5 @@
+import json
+import pathlib
 from os.path import abspath, dirname, join
 
 import flask
@@ -36,3 +38,32 @@ def initialise_app(application: str) -> None:
     """
     if settings.in_dev_environment:
         app.jinja_env.auto_reload = True
+
+
+# The unexpected ../../ is because Path treats __init__.py as a directory
+metafile_path = pathlib.Path(__file__) / ".." / ".." / "metafile.json"
+try:
+    with open(metafile_path.resolve(), "r") as fh:
+        metafile = json.loads(fh.read())
+except FileNotFoundError as e:
+    raise Exception("`metafile.json` is missing. Have you run 'make web'?") from e
+
+
+@app.context_processor
+def register_js_helpers():
+    def es_module(name: str) -> str:
+        """
+        Returns the built static file path for a given original TS file
+
+        es_module("js/Example.tsx") -> "/static/Example-ABD123.js"
+        """
+        if name not in metafile:
+            raise KeyError(
+                f"'{name}' isn't defined in the metafile and hasn't been built. Do you need to run 'make web'?"
+            )
+
+        log.info(metafile)
+
+        return flask.url_for("static", filename=metafile[name])
+
+    return dict(es_module=es_module)

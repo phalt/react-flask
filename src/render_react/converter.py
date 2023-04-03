@@ -5,7 +5,6 @@ from typing import (
     Literal,
     Optional,
     Type,
-    TypeVar,
     Union,
     get_args,
     get_origin,
@@ -24,10 +23,7 @@ def _base_converter() -> GenConverter:
     Create a cattr converter designed for structuring/unstructuring data the way that React requires it for Admin.
 
     For both requests (structring) and responses (unstructuring), we're rendering from/to JSON, which means the
-    converters can assume that simple types like `str` and `int` are available. For more complex types like `Quantum`,
-    we render from/to a `dict` with a fixed key (in Quantum's case, `$quantum`), so the converter knows how to
-    recognise and structure incoming data properly. Likewise, on the client side, this rendering can be recognised
-    unambiguously.
+    converters can assume that simple types like `str` and `int` are available.
     """
     converter = make_converter(forbid_extra_keys=True)
 

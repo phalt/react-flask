@@ -1,5 +1,5 @@
 import React from 'react'
-import PageProps from './index.type'
+import PageProps from './react_example.type'
 import {Container, Row} from 'react-bootstrap'
 
 const Page: React.FunctionComponent<PageProps> = () => {
@@ -7,7 +7,9 @@ const Page: React.FunctionComponent<PageProps> = () => {
         <Container>
             <Row className="mb-4 border-bottom">
                 <p>Hello, React-admin!</p>
-                <p>Make sure you update the <code>PageProps</code> import path to be correct.</p>
+                <p>
+                    Make sure you update the <code>PageProps</code> import path to be correct.
+                </p>
                 <p>You can also rename this React function if it helps with better organisation.</p>
             </Row>
         </Container>

@@ -1,0 +1,14 @@
+{% extends 'base.jinja2' %}
+
+{% block content %}
+    <div id="render-react-root"></div>
+{% endblock %}
+
+{% block script %}
+    <script nonce="{{ script_nonce }}" type="module">
+        import {renderReactPage} from '{{ es_module('src/js/render_react.tsx') }}'
+        import Page from '{{ es_module(react_entrypoint_filename) }}'
+
+        renderReactPage(Page, {{ props | json | json | safe }}, {{ base_data | json | safe }})
+    </script>
+{% endblock %}

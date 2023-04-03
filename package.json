@@ -1,0 +1,92 @@
+{
+    "name": "app",
+    "version": "0.0.1",
+    "private": true,
+    "description": "Flask routes, React pages",
+    "scripts": {
+        "build": "node build.mjs",
+        "watch": "yarn build watch",
+        "format-check": "prettier --config prettier.config.js --check \"/src/js/**/*.{ts,tsx,js}\"",
+        "format": "prettier --config prettier.config.js --write \"src/js/**/*.{ts,tsx,js}\"",
+        "prepare": "cd .. && husky install admin/.husky",
+        "precommit": "lint-staged --quiet"
+    },
+    "author": "Paul Hallett <paulandrewhallett@gmail.com>",
+    "babel": {
+        "presets": [
+            [
+                "@babel/preset-env",
+                {
+                    "targets": {
+                        "browsers": [
+                            "last 2 versions"
+                        ]
+                    }
+                }
+            ]
+        ]
+    },
+    "resolutions": {
+        "@types/react": "^17.0.43"
+    },
+    "dependencies": {
+        "@popperjs/core": "^2.10.2",
+        "big.js": "^6.2.1",
+        "bootstrap": "^5.2",
+        "classnames": "^2.2.6",
+        "color": "^3.1.2",
+        "debounce-promise": "^3.1.2",
+        "esbuild": "0.17.4",
+        "esbuild-sass-plugin": "^2.3.3",
+        "immer": "^6.0.3",
+        "jquery": "^3.6.0",
+        "luxon": "^1.22.0",
+        "popper.js": "^1.16.1",
+        "react": "^18",
+        "react-beautiful-dnd": "^13.1.0",
+        "react-bootstrap": "^2.5",
+        "react-dom": "^18",
+        "react-json-view": "^1.19.1",
+        "react-query": "^3.26.0",
+        "react-router": "^6.3.0",
+        "react-router-dom": "^6.3.0",
+        "react-select": "^5.4.0",
+        "twig": "^1.15.1",
+        "yup": "^0.32.11"
+    },
+    "devDependencies": {
+        "@types/big.js": "^6.1.6",
+        "@types/bootstrap": "^5.2",
+        "@types/classnames": "^2.2",
+        "@types/color": "^3",
+        "@types/debounce-promise": "^3.1",
+        "@types/jquery": "^3.5.9",
+        "@types/luxon": "^1.22",
+        "@types/react": "^17",
+        "@types/react-beautiful-dnd": "^13.1.2",
+        "@types/react-dom": "^17",
+        "@types/twig": "^1",
+        "eslint": "^6.8.0",
+        "eslint-config-standard": "^14.1.0",
+        "eslint-config-standard-react": "^9.2.0",
+        "eslint-plugin-import": "^2.20.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-react": "^7.18.0",
+        "eslint-plugin-standard": "^4.0.1",
+        "husky": "^7.0.4",
+        "lint-staged": "^12.4.1",
+        "prettier": "^2",
+        "sass": "^1.49.9",
+        "typescript": "^4.9.4"
+    },
+    "engines": {
+        "node": ">=16.15.0",
+        "yarn": "=3.2.1"
+    },
+    "packageManager": "yarn@3.2.1",
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "prettier --config prettier.config.js --write"
+        ]
+    }
+}
