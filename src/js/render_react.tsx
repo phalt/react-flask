@@ -1,6 +1,7 @@
 import React from 'react'
 import {createRoot} from 'react-dom/client'
 import {QueryClient, QueryClientProvider} from 'react-query'
+import {Loading} from './components/loading'
 
 declare module 'react' {
     export function useTransition(): [boolean, (callback: () => void) => void]
@@ -79,7 +80,7 @@ export function renderReactPage<P>(Component: React.FunctionComponent<P>, jsonPr
         <BaseDataContext.Provider value={baseData}>
             <QueryClientProvider client={queryClient}>
                 <ErrorBoundary>
-                    <React.Suspense fallback={'Loading...'}>
+                    <React.Suspense fallback={<Loading />}>
                         <Component {...props} />
                     </React.Suspense>
                 </ErrorBoundary>

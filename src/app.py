@@ -12,11 +12,11 @@ log = structlog.get_logger(__name__)
 
 class App(flask.Flask):
     def run(self, *args, **kwargs):
-        # Only generate types files in development
+        # Only generate TS types files in development
         if settings.in_dev_environment:
             from src.apis.types_manager import api_route_type_manager
 
-            log.info(app.url_map)
+            log.info(f"\nURL map: \n {app.url_map}")
 
             api_route_type_manager.write_types()
 
@@ -61,8 +61,6 @@ def register_js_helpers():
             raise KeyError(
                 f"'{name}' isn't defined in the metafile and hasn't been built. Do you need to run 'make web'?"
             )
-
-        log.info(metafile)
 
         return flask.url_for("static", filename=metafile[name])
 
