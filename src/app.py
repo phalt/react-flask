@@ -1,8 +1,11 @@
 from os.path import abspath, dirname, join
 
 import flask
+import structlog
 
 from src import settings
+
+log = structlog.get_logger(__name__)
 
 
 class App(flask.Flask):
@@ -10,6 +13,8 @@ class App(flask.Flask):
         # Only generate types files in development
         if settings.in_dev_environment:
             from src.apis.types_manager import write_types
+
+            log.info(app.url_map)
 
             write_types()
 
@@ -21,6 +26,7 @@ app = App(
     static_folder=abspath(join(dirname(dirname(__file__)), "static")),
     template_folder=abspath(join(dirname(dirname(__file__)), "template")),
 )
+from src import views
 
 
 def initialise_app(application: str) -> None:

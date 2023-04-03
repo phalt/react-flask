@@ -20,6 +20,25 @@ tests = ["attrs[tests-no-zope]", "zope.interface"]
 tests-no-zope = ["cloudpickle", "cloudpickle", "hypothesis", "hypothesis", "mypy (>=0.971,<0.990)", "mypy (>=0.971,<0.990)", "pympler", "pympler", "pytest (>=4.3.0)", "pytest (>=4.3.0)", "pytest-mypy-plugins", "pytest-mypy-plugins", "pytest-xdist[psutil]", "pytest-xdist[psutil]"]
 
 [[package]]
+name = "attrs-strict"
+version = "1.0.0"
+description = "Runtime validators for attrs"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "attrs_strict-1.0.0-py3-none-any.whl", hash = "sha256:c7a4d9e4521d6706906ea96204f05b95acd45c3f0fc0130837f0a33bc9678c0f"},
+    {file = "attrs_strict-1.0.0.tar.gz", hash = "sha256:6326c1e51c4fd2fffc9dd607dec06c31add64eedbd37a651ea88f663a37c3f18"},
+]
+
+[package.dependencies]
+attrs = ">=19.1.0"
+
+[package.extras]
+docs = ["Sphinx (>=3)"]
+test = ["covdefaults (>=2)", "pytest (>=6)", "pytest-cov (>=3)"]
+
+[[package]]
 name = "black"
 version = "23.3.0"
 description = "The uncompromising code formatter."
@@ -66,6 +85,21 @@ colorama = ["colorama (>=0.4.3)"]
 d = ["aiohttp (>=3.7.4)"]
 jupyter = ["ipython (>=7.8.0)", "tokenize-rt (>=3.2.0)"]
 uvloop = ["uvloop (>=0.15.2)"]
+
+[[package]]
+name = "cattrs"
+version = "22.2.0"
+description = "Composable complex class support for attrs and dataclasses."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "cattrs-22.2.0-py3-none-any.whl", hash = "sha256:bc12b1f0d000b9f9bee83335887d532a1d3e99a833d1bf0882151c97d3e68c21"},
+    {file = "cattrs-22.2.0.tar.gz", hash = "sha256:f0eed5642399423cf656e7b66ce92cdc5b963ecafd041d1b24d136fdde7acf6d"},
+]
+
+[package.dependencies]
+attrs = ">=20"
 
 [[package]]
 name = "click"
@@ -115,6 +149,18 @@ Werkzeug = ">=2.2.2"
 [package.extras]
 async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
+
+[[package]]
+name = "inflection"
+version = "0.5.1"
+description = "A port of Ruby on Rails inflector to Python"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "inflection-0.5.1-py2.py3-none-any.whl", hash = "sha256:f38b2b640938a4f35ade69ac3d053042959b62a0f1076a5bbaa1b9526605a8a2"},
+    {file = "inflection-0.5.1.tar.gz", hash = "sha256:1a29730d366e996aaacffb2f1f1cb9593dc38e2ddd30c91250c6dde09ea9b417"},
+]
 
 [[package]]
 name = "isort"
@@ -384,4 +430,4 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.2"
-content-hash = "7faa167185ce367eb8b2f35ee5fdf6c1ace7f623b2e9b171a0e50edc9326d73a"
+content-hash = "7ef5171a439ede57be7379f426071dba9584ab2ff34b0a9255cb639d10660000"
