@@ -1,5 +1,7 @@
 # 💫 Beckett
 
+![Beckett maze](banner.jpg)
+
 ## A strongly-linked Python & Typescript Framework
 
 ### First things first: why?
