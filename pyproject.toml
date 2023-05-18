@@ -3,15 +3,14 @@ profile = "black"
 
 
 [tool.poetry]
-name = "flask-render-react"
+name = "beckett"
 version = "0.1.0"
-description = "Flask routing, React views"
+description = "A strongly-linked Python & Typescript Framework"
 authors = ["Paul Hallett <paulandrewhallett@gmail.com>"]
 readme = "README.md"
-packages = [{include = "flask_render_react"}]
 
 [tool.poetry.dependencies]
-python = "3.11.2"
+python = "^3.11.2"
 Flask = "^2.2.3"
 attrs = "^22.2.0"
 Jinja2 = "^3.1.2"
@@ -24,8 +23,21 @@ structlog = "^22.3.0"
 attrs-strict = "^1.0.0"
 inflection = "^0.5.1"
 cattrs = "^22.2.0"
+ruff = "^0.0.267"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+select = [
+    # Pyflakes
+    "F",
+    # Pycodestyle
+    "E",
+    "W",
+    # isort
+    "I001"
+]

@@ -29,7 +29,7 @@ app = App(
     template_folder=abspath(join(dirname(__file__), "template")),
 )
 
-from src import views
+from src import views  # noqa
 
 
 def initialise_app(application: str) -> None:

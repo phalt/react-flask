@@ -10,7 +10,7 @@ web:  ## Watch the JS directory for changes while running the frontend server
 	yarn watch
 
 lint:  ## Run linting on the project
-	isort src/
+	ruff src/
 	black src/
 	yarn format
 

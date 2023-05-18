@@ -1,7 +1,7 @@
 /*
 THIS FILE IS AUTO-GENERATED, DO NOT ALTER MANUALLY.
 
-Please see flask_render_react/src/apis/types_manager.py
+Please see beckett_framework/src/apis/types_manager.py
 */
 
 // prettier-ignore
@@ -25,12 +25,12 @@ export interface ExamplePostExampleResponse {
 
 // prettier-ignore
 export interface GET_MAP {
-    // flask_render_react/src/views/example.py
+    // beckett_framework/src/views/example.py
     "example.get_example": {request: undefined, response: ExampleGetExampleResponse}
 }
 
 // prettier-ignore
 export interface POST_MAP {
-    // flask_render_react/src/views/example.py
+    // beckett_framework/src/views/example.py
     "example.post_example": {request: ExamplePostExampleRequest, response: ExamplePostExampleResponse}
 }

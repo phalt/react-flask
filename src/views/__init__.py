@@ -1,1 +1,1 @@
-from src.views import example
+from src.views import example  # noqa

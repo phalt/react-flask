@@ -58,7 +58,7 @@ def _base_converter() -> GenConverter:
                 len(values) == 1
             )  # It's possible to declare a literal with multiple values. We can't handle those.
             return get_args(type_literal)[0]
-        except:
+        except Exception:
             return None
 
     def is_union_with_type_literals(input_type: Type) -> bool:

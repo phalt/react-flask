@@ -162,7 +162,7 @@ def strip_union_type_wrapper(type_hint: Any) -> typing.Optional[typing.List[type
 
 @attr.define
 class APIResponse:
-    """The base class for any value returned from a @blueprint.api_get_route- or a @blueprint.api_post_route-decorated endpoint."""
+    """The base class for any value returned from a @blueprint.api_get_route- or a @blueprint.api_post_route-decorated endpoint."""  # noqa
 
     __type__: str = attr.ib(init=False)
     """A string that uniquely identifies the type of the response."""

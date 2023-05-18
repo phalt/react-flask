@@ -1,7 +1,8 @@
 .venv
 .mypy_cache
-.yarn/*
-node_modules/*
+.yarn*
+.ruff*
+node_modules
 .editorconfig
 src/static/js/*
 metafile.json
