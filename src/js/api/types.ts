@@ -1,7 +1,7 @@
 /*
 THIS FILE IS AUTO-GENERATED, DO NOT ALTER MANUALLY.
 
-Please see beckett_framework/src/apis/types_manager.py
+Please see beckett_framework/src/beckett/types/types_manager.py
 */
 
 // prettier-ignore

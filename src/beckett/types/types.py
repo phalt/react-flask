@@ -10,8 +10,8 @@ from uuid import UUID
 import attr
 import inflection
 
-from src.render_react.imports import TypescriptImports
-from src.render_react.interfaces import TypescriptInterfaces
+from src.beckett.renderer.typescript_react.imports import TypescriptImports
+from src.beckett.renderer.typescript_react.interfaces import TypescriptInterfaces
 
 NoneType = type(None)
 
@@ -19,8 +19,6 @@ NoneType = type(None)
 def generate_type(
     type_: Any,
     imports: TypescriptImports,
-    indent: int = 0,
-    render_required: bool = True,
 ) -> str:
     if type_ is int:
         return "number"

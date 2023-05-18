@@ -15,12 +15,12 @@ from uuid import UUID
 from cattr import GenConverter
 from cattr.preconf.json import make_converter
 
-from src.apis.types import NoneType
+from src.beckett.types.types import NoneType
 
 
 def _base_converter() -> GenConverter:
     """
-    Create a cattr converter designed for structuring/unstructuring data the way that React requires it for Admin.
+    Create a cattr converter designed for structuring/unstructuring data the way that TypeScript requires it.
 
     For both requests (structring) and responses (unstructuring), we're rendering from/to JSON, which means the
     converters can assume that simple types like `str` and `int` are available.

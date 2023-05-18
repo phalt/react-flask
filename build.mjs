@@ -29,7 +29,7 @@ const target = ['chrome100', 'firefox100']
 const minify = env !== 'development'
 
 const entryPoints = [
-    'src/js/render_react.tsx',
+    'src/js/beckett_page.tsx',
 ]
 
 // Crawl the js template dir and add everything that looks like a Page as an entrypoint
@@ -64,7 +64,7 @@ const writeMetafilePlugin = {
                 }
             })
             console.log(entryPointMap)
-            await fs.writeFile('metafile.json', JSON.stringify(Object.fromEntries(entryPointMap.entries())))
+            await fs.writeFile('src/metafile.json', JSON.stringify(Object.fromEntries(entryPointMap.entries())))
         })
     },
 }

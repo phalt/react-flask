@@ -6,7 +6,7 @@
 
 {% block script %}
     <script nonce="{{ script_nonce }}" type="module">
-        import {renderReactPage} from '{{ es_module('src/js/render_react.tsx') }}'
+        import {renderReactPage} from '{{ es_module('src/js/beckett_page.tsx') }}'
         import Page from '{{ es_module(react_entrypoint_filename) }}'
 
         renderReactPage(Page, {{ props | json | json | safe }}, {{ base_data | json | safe }})

@@ -1,5 +1,5 @@
 import {GET_MAP, POST_MAP} from './types'
-import {BaseDataContext, jsonReviver, jsonReplacer} from '~/render_react'
+import {BaseDataContext, jsonReviver, jsonReplacer} from '~/beckett_page'
 import {useMutation, useQuery, useQueryClient} from 'react-query'
 import {useContext} from 'react'
 

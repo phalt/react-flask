@@ -12,7 +12,12 @@ import structlog
 import werkzeug
 from attrs_strict import type_validator
 
-from src.apis.types import (
+from src.beckett.converters.typescript import converter, get_request_converter
+from src.beckett.renderer.typescript_react.imports import TypescriptImports
+from src.beckett.renderer.typescript_react.interfaces import TypescriptInterfaces
+from src.utils import unwrap
+
+from .types import (
     APIResponse,
     BadRequest,
     Forbidden,
@@ -20,10 +25,6 @@ from src.apis.types import (
     NotFound,
     generate_interfaces,
 )
-from src.render_react.converter import converter, get_request_converter
-from src.render_react.imports import TypescriptImports
-from src.render_react.interfaces import TypescriptInterfaces
-from src.utils import unwrap
 
 log = structlog.get_logger(__name__)
 

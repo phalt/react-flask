@@ -1,19 +1,19 @@
 import flask
 import structlog
 
-from src.apis.types_manager import generate_api_decorator
+from src.beckett.types.types_manager import generate_api_decorator
 
 log = structlog.get_logger(__name__)
 
 
-class Blueprint(flask.Blueprint):
+class BeckettBlueprint(flask.Blueprint):
     """
     Handles API URL registration
     """
 
-    def api_get_route(self, rule, *, endpoint=None, **options):
+    def api_get(self, rule, *, endpoint=None, **options):
         if "methods" in options:
-            raise Exception("Can't specify method for api_get_route")
+            raise Exception("Can't specify method for api_get")
 
         def decorator(f):
             actual_endpoint = endpoint or f.__name__
@@ -34,9 +34,9 @@ class Blueprint(flask.Blueprint):
 
         return decorator
 
-    def api_post_route(self, rule, *, endpoint=None, **options):
+    def api_post(self, rule, *, endpoint=None, **options):
         if "methods" in options:
-            raise Exception("Can't specify method for api_post_route")
+            raise Exception("Can't specify method for api_post")
 
         def decorator(f):
             actual_endpoint = endpoint or f.__name__

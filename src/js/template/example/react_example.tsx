@@ -8,7 +8,7 @@ const Page: React.FunctionComponent<PageProps> = ({good}) => {
     return (
         <Container>
             <Row className="mb-4 border-bottom">
-                <p>Hello, React!</p>
+                <p>Hello, React! test</p>
                 <p>
                     I was fed the following props from the Flask view: <code>good: {good}</code>
                 </p>

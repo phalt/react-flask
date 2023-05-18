@@ -4,12 +4,13 @@ A simple example Flask Render React app
 
 import attrs
 
-from src.apis.blueprint import Blueprint
-from src.apis.types import APIResponse
 from src.app import app
-from src.render_react.renderer import render_html, render_react
+from src.beckett.blueprint import BeckettBlueprint
+from src.beckett.renderer.html.renderer import render_html
+from src.beckett.renderer.typescript_react.renderer import beckett_page
+from src.beckett.types import APIResponse
 
-blueprint = Blueprint("example", __name__, url_prefix="/example")
+blueprint = BeckettBlueprint("example", __name__, url_prefix="/example")
 
 
 @blueprint.route("/")
@@ -26,7 +27,7 @@ class GetRouteResponse(APIResponse):
     kia: str
 
 
-@blueprint.api_get_route("/get")
+@blueprint.api_get("/get")
 def get_example() -> GetRouteResponse:
     """
     This is an example API GET route.
@@ -39,7 +40,7 @@ class PostRouteResponse(APIResponse):
     result: str
 
 
-@blueprint.api_post_route("/post")
+@blueprint.api_post("/post")
 def post_example(parameter_one: str) -> PostRouteResponse:
     """
     This is an example API GET route.
@@ -53,7 +54,7 @@ class ExamplePageProps:
 
 
 @blueprint.route("/react")
-@render_react()
+@beckett_page()
 def react_example() -> ExamplePageProps:
     return ExamplePageProps(good="day")
 
