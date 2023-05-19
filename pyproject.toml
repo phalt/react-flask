@@ -24,6 +24,8 @@ attrs-strict = "^1.0.0"
 inflection = "^0.5.1"
 cattrs = "^22.2.0"
 ruff = "^0.0.267"
+mkdocs = "^1.4.3"
+mkdocs-material = "^9.1.13"
 
 
 [build-system]

@@ -1,9 +1,8 @@
 import React from 'react'
-// Note: you'll need to update this path!
-import PageProps from './page.type'
+import PageProps from './react_example.type'
 import {Container, Row} from 'react-bootstrap'
 
-const Page: React.FunctionComponent<PageProps> = (props) => {
+const Page: React.FunctionComponent<PageProps> = props => {
     return (
         <Container>
             <Row className="mb-4 border-bottom">

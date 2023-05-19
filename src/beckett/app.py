@@ -23,6 +23,8 @@ class BeckettApp(flask.Flask):
 
             api_route_type_manager.write_types()
 
+            log.info(f"URLs: {self.url_map}")
+
         extra_files = [settings.BECKETT_METAFILE_PATH]
 
         return super().run(*args, **kwargs, extra_files=extra_files)

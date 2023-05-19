@@ -1,1 +1,1 @@
-from src.views import example  # noqa
+from src.views import people, index  # noqa
