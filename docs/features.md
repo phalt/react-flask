@@ -49,7 +49,7 @@ app.register_blueprint(blueprint)
 
 When the Beckett flask server is running, this will autogenerate the following TypeScript interface:
 
-```ts title="js/api/types.ts"
+```ts title="js/api/types.ts" linenums="1"
 /*
 THIS FILE IS AUTO-GENERATED, DO NOT ALTER MANUALLY.
 */
@@ -68,11 +68,11 @@ Beckett automatically adds additional parameters to any `APIResponse` object it 
 
 Under the hood, we use [attrs](https://www.attrs.org/en/stable/examples.html) and [cattrs](https://github.com/python-attrs/cattrs) to take the types in the classes we define and transform them into their TypeScript equivalents.
 
-## Auto-generated React pages
+## React pages
 
-Beckett will auto-generate any new React page when you register a new Beckett page in the Flask service.
+Beckett will auto-generate any new React page when you register a new Beckett page in the Flask service, when you are in development mode. Beckett's is built such that a Flask _route_ (defined through the URL of a Flask view function) can be linked directly to a React _page_ on the frontend.
 
-```py title="src/views/people.py linenums="1"
+```py title="src/views/people.py" linenums="1"
 
 import attrs
 
@@ -97,8 +97,10 @@ def example_page() -> ExamplePageProps:
 app.register_blueprint(blueprint)
 ```
 
-When the Beckett flask server is running in development mode, it will recognise a new endpoint has been registered, and it makes a new React page linked to the Flask view.
+When the Beckett Flask server is running in development mode it will recognise a new endpoint has been registered, and it makes a new React page linked to the Flask view.
 This is all handled by applying the `@beckett_page()` decorator.
+
+The generated page will start something like this:
 
 ```ts linenums="1" title="src/js/template/people/example_page.tsx"
 import React from 'react'
@@ -121,9 +123,11 @@ const Page: React.FunctionComponent<PageProps> = (props) => {
 export default Page
 ```
 
+The template can be customised by setting the `BECKETT_REACT_PAGE_TEMPLATE` environment variable to a path.
+
 Once this has been generated you are free to go and develop the frontend using any React library you want.
 
-## Automatic Props for React pages
+## Props for React pages
 
 As well as the base page, `beckett_page` also generates a `PageProps` interface. The response returned by the Flask view are injected as props into this page for you automatically.
 The generated file for the example above looks something like this:
@@ -140,13 +144,13 @@ export default interface PageProps {
 
 This file will update automatically as you make changes to the Flask view response class and the server is in development mode.
 
-## Type-safe API Client
+## API Client
 
-Blep
+TODO
 
 ## Refresh API queries
 
-Blep
+TODO
 
 ## Run it all together at once
 

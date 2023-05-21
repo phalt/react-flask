@@ -6,3 +6,4 @@ node_modules
 .editorconfig
 src/static/js/*
 metafile.json
+site

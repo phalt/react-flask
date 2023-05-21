@@ -1,8 +1,10 @@
 # 🎹 Types conversion
 
 > **Remember!** Beckett doesn't just convert one way.
-> 
+>
 > API requests going _into_ the Beckett Flask service will be checked for type consistency.
+
+Beckett Framework uses [Beckett types](https://github.com/beckett-software/beckett-types) to manage types translation.
 
 ## Conversion chart
 
