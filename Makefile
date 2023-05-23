@@ -3,6 +3,12 @@ help:
 	@grep -E '^[ .a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 	@echo
 
+build:  ## Initial build
+	python3.11 -m venv .venv
+	poetry install
+	nvm use
+	yarn install
+
 dev:  ## Run both the Flask service and the React app at once
 	make -j4 serve web
 

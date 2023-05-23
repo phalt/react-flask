@@ -6,10 +6,9 @@ import attrs
 
 from src.app import app
 from src.beckett.blueprint import BeckettBlueprint
-from src.beckett.renderer.typescript_react.renderer import beckett_page
 from src.beckett.types import APIResponse
 
-blueprint = BeckettBlueprint("people", __name__, url_prefix="/people")
+beckett = BeckettBlueprint("people", __name__, url_prefix="/people")
 
 
 @attrs.define
@@ -17,7 +16,7 @@ class GetPeopleResponse(APIResponse):
     name: str
 
 
-@blueprint.api_get("/get")
+@beckett.api_get("/get")
 def get_people() -> GetPeopleResponse:
     """
     This is an example API GET route.
@@ -30,7 +29,7 @@ class PostRouteResponse(APIResponse):
     result: str
 
 
-@blueprint.api_post("/post")
+@beckett.api_post("/post")
 def post_example(parameter_one: str) -> PostRouteResponse:
     """
     This is an example API GET route.
@@ -43,10 +42,16 @@ class ExamplePageProps:
     good: str
 
 
-@blueprint.route("/")
-@beckett_page()
+@beckett.route("/")
+@beckett.page()
 def react_example() -> ExamplePageProps:
     return ExamplePageProps(good="day")
 
 
-app.register_blueprint(blueprint)
+@beckett.route("/test/<name>")
+@beckett.page()
+def test_page(name: str) -> ExamplePageProps:
+    return ExamplePageProps(good=name)
+
+
+app.register_blueprint(beckett)

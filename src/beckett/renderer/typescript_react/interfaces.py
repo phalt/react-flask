@@ -23,7 +23,7 @@ class TypescriptInterfaces:
 
     def render(self) -> str:
         out = ""
-        for name, declaration in self:
+        for _, declaration in self:
             out += "// prettier-ignore\n"
             out += "export "
             out += declaration
