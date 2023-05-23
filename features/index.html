@@ -254,20 +254,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#built-on-great-tools" class="md-nav__link">
-    Built on great tools
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#and-you-can-continue-to-use-them" class="md-nav__link">
-    ...and you can continue to use them
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#strongly-linked-types" class="md-nav__link">
     Strongly-linked types
   </a>
@@ -374,20 +360,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#built-on-great-tools" class="md-nav__link">
-    Built on great tools
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#and-you-can-continue-to-use-them" class="md-nav__link">
-    ...and you can continue to use them
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#strongly-linked-types" class="md-nav__link">
     Strongly-linked types
   </a>
@@ -445,15 +417,6 @@
 
 
 <h1 id="features">📄 Features</h1>
-<h2 id="built-on-great-tools">Built on great tools</h2>
-<p>Beckett bundles a <a href="https://flask.palletsprojects.com/en/2.3.x/">Flask web server</a> and a <a href="https://react.dev/">React</a> <a href="https://www.typescriptlang.org/">TypeScript</a> frontend into one framework.</p>
-<p>TypeScript and Python are two of the <a href="https://www.statista.com/statistics/793628/worldwide-developer-survey-most-used-languages/">most used programming languages in the world</a>, and so are often used together in projects.
-Despite this; getting them set up to work together nicely is tedious and time consuming, and often a poor developer experience.</p>
-<p>Beckett solves this problem by strongly-linking them together as one framework.</p>
-<h2 id="and-you-can-continue-to-use-them">...and you can continue to use them</h2>
-<p>Beckett doesn't expect you to use Python to control the frontend, when React TypeScript offers a better solution, and vice versa.</p>
-<p>You still write Flask views like a normal flask app, and you can install and use any other Python library that works nicely with Flask.</p>
-<p>You still write React TypeScript like any other React application, and you can <code>yarn add</code> any JS library you like to meet the needs of your project.</p>
 <h2 id="strongly-linked-types">Strongly-linked types</h2>
 <p>When we built Beckett we decided that if we're going to bundle the languages together, why not link them strongly and find extra benefits?</p>
 <p>The first major feature we built was strongly-linked types.</p>
@@ -544,31 +507,29 @@ Despite this; getting them set up to work together nicely is tedious and time co
 <span class="normal"><a href="#__codelineno-2-17">17</a></span>
 <span class="normal"><a href="#__codelineno-2-18">18</a></span>
 <span class="normal"><a href="#__codelineno-2-19">19</a></span>
-<span class="normal"><a href="#__codelineno-2-20">20</a></span>
-<span class="normal"><a href="#__codelineno-2-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">attrs</span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">attrs</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="kn">from</span> <span class="nn">src.app</span> <span class="kn">import</span> <span class="n">app</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kn">from</span> <span class="nn">src.beckett.blueprint</span> <span class="kn">import</span> <span class="n">BeckettBlueprint</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="kn">from</span> <span class="nn">src.beckett.renderer.typescript_react.renderer</span> <span class="kn">import</span> <span class="n">beckett_page</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="n">blueprint</span> <span class="o">=</span> <span class="n">BeckettBlueprint</span><span class="p">(</span><span class="s2">&quot;people&quot;</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">,</span> <span class="n">url_prefix</span><span class="o">=</span><span class="s2">&quot;/people&quot;</span><span class="p">)</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="c1"># Hiding other endpoints for clarity</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="o">...</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="nd">@attrs</span><span class="o">.</span><span class="n">define</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="k">class</span> <span class="nc">ExamplePageProps</span><span class="p">:</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>    <span class="n">hello</span><span class="p">:</span> <span class="nb">str</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="nd">@blueprint</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="nd">@beckett_page</span><span class="p">()</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="k">def</span> <span class="nf">example_page</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">ExamplePageProps</span><span class="p">:</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a>    <span class="k">return</span> <span class="n">ExamplePageProps</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="s2">&quot;world&quot;</span><span class="p">)</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="n">app</span><span class="o">.</span><span class="n">register_blueprint</span><span class="p">(</span><span class="n">blueprint</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">beckett</span> <span class="o">=</span> <span class="n">BeckettBlueprint</span><span class="p">(</span><span class="s2">&quot;people&quot;</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">,</span> <span class="n">url_prefix</span><span class="o">=</span><span class="s2">&quot;/people&quot;</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="c1"># Hiding other endpoints for clarity</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="o">...</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="nd">@attrs</span><span class="o">.</span><span class="n">define</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="k">class</span> <span class="nc">ExamplePageProps</span><span class="p">:</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>    <span class="n">hello</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="nd">@beckett</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="nd">@beckett</span><span class="o">.</span><span class="n">page</span><span class="p">()</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="k">def</span> <span class="nf">example_page</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">ExamplePageProps</span><span class="p">:</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a>    <span class="k">return</span> <span class="n">ExamplePageProps</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="s2">&quot;world&quot;</span><span class="p">)</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="n">app</span><span class="o">.</span><span class="n">register_blueprint</span><span class="p">(</span><span class="n">beckett</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p>When the Beckett Flask server is running in development mode it will recognise a new endpoint has been registered, and it makes a new React page linked to the Flask view.
-This is all handled by applying the <code>@beckett_page()</code> decorator.</p>
+This is all handled by applying the <code>@beckett.page()</code> decorator.</p>
 <p>The generated page will start something like this:</p>
 <div class="language-ts highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/js/template/people/example_page.tsx</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
@@ -609,14 +570,14 @@ This is all handled by applying the <code>@beckett_page()</code> decorator.</p>
 <p>The template can be customised by setting the <code>BECKETT_REACT_PAGE_TEMPLATE</code> environment variable to a path.</p>
 <p>Once this has been generated you are free to go and develop the frontend using any React library you want.</p>
 <h2 id="props-for-react-pages">Props for React pages</h2>
-<p>As well as the base page, <code>beckett_page</code> also generates a <code>PageProps</code> interface. The response returned by the Flask view are injected as props into this page for you automatically.
+<p>As well as the base page, <code>beckett.page()</code> also generates a <code>PageProps</code> interface. The response returned by the Flask view are injected as props into this page for you automatically.
 The generated file for the example above looks something like this:</p>
 <div class="language-ts highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/js/template/people/example_page.type.ts</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
 <span class="normal"><a href="#__codelineno-4-4">4</a></span>
 <span class="normal"><a href="#__codelineno-4-5">5</a></span>
-<span class="normal"><a href="#__codelineno-4-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">// This file is generated by @beckett_page</span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">// This file is generated by @beckett.page()</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">// prettier-ignore</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">PageProps</span><span class="w"> </span><span class="p">{</span>
