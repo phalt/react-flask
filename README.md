@@ -12,6 +12,8 @@ At its core, Beckett features a sophisticated types manager that automatically s
 
 While Beckett is strongly opinionated, favoring specific design choices, it significantly enhances productivity by providing a cohesive development experience and reducing the time spent on manual synchronization.
 
+![beckett features](docs/diagram.jpg)
+
 ## Harnessing Powerful Tools: Beckett's Foundation
 
 Beckett harnesses the power of industry-leding tools by seamlessly integratin a [Flask web server](https://flask.palletsprojects.com/en/2.3.x/) and a [React](https://react.dev/) [TypeScript](https://www.typescriptlang.org/) frontend into a unified framework.
