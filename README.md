@@ -6,7 +6,7 @@ _The Efficient Framework for Building Type-Safe Python Web Servers and React Typ
 
 Welcome to Beckett, a solution for rapidly constructing type-safe Python web servers and React TypeScript websites while ensuring consistent typing interfaces across both languages.
 
-Beckett seamlessly combines the power of [Flask](https://flask.palletsprojects.com/en/2.3.x/), a popular Python web framework, with a robust [React TypeScript](https://www.typescriptlang.org/docs/handbook/react.html) web server, providing a comprehensive full stack framework. Unlike other frameworks, Beckett eliminates the need for an intermediary domain language and tightly couples the Typed API interface, resulting in a more streamlined development process.
+Beckett seamlessly combines the power of [Flask](https://flask.palletsprojects.com/en/2.3.x/), a popular Python web framework, with a robust [React TypeScript](https://www.typescriptlang.org/docs/handbook/react.html) web server, providing a comprehensive full stack framework. Unlike traditional project set ups, Beckett eliminates the need for an intermediary domain language because it tightly couples the Typed API interface, resulting in a more streamlined development process.
 
 At its core, Beckett features a sophisticated types manager that automatically synchronizes [Python Type hints](https://docs.python.org/3/library/typing.html) and [TypeScript interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html). This means that as you make changes to your code, Beckett diligently keeps the API interface definitions in both languages in perfect harmony. Gone are the worries about compatibility issues when deploying changes—the Beckett framework ensures seamless deployments.
 
