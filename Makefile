@@ -19,7 +19,7 @@ web:  ## Watch the JS directory for changes while running the frontend server
 	yarn watch
 
 lint:  ## Run linting on the project
-	ruff src/
+	ruff src/ --fix
 	black src/
 	yarn format
 

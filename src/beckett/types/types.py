@@ -1,14 +1,11 @@
-from __future__ import annotations
-
 import enum
-import json
 import typing
 from decimal import Decimal
 from typing import Any, Literal, Tuple, Union, get_args, get_origin
 from uuid import UUID
 
-import attr
 import inflection
+from pydantic import BaseModel, computed_field
 
 from src.beckett.renderer.typescript_react.imports import TypescriptImports
 from src.beckett.renderer.typescript_react.interfaces import TypescriptInterfaces
@@ -75,14 +72,9 @@ def generate_interfaces(
     else:
         declaration = "interface " + name + " {\n"
 
-    attr.resolve_types(cls)
-
-    for attribute in cls.__attrs_attrs__:
-        attrib_type = attribute.type
-        attrib_name = json.dumps(attribute.name)
-
+    for field_name, field_info in cls.model_fields.items():
         # check to see if it is wrapped in a typing.Optional[]
-        inner_type, was_optional = strip_optional_type_wrapper(attrib_type)
+        inner_type, was_optional = strip_optional_type_wrapper(field_info.annotation)
 
         # check to see if it is wrapped in a typing.List[]
         inner_type, was_list = strip_list_type_wrapper(inner_type)
@@ -98,10 +90,10 @@ def generate_interfaces(
 
                 type_names.append(union_type.__name__)
             # The class we've been passed can declare its use of the union now
-            declaration += f"    {attrib_name}: ({(' | '.join(type_names))})"
+            declaration += f'    "{field_name}": ({("| ".join(type_names))})'
 
         # check to see if it is a custom defined type
-        elif hasattr(inner_type, "__attrs_attrs__"):
+        elif hasattr(inner_type, "__pydantic_complete__"):
             # We've found an object that needs interface(s) of its own.
             child_imports, child_interfaces = generate_interfaces(inner_type)
 
@@ -109,10 +101,10 @@ def generate_interfaces(
             interfaces.merge(child_interfaces)
 
             # The class we've been passed can declare its use of the object.
-            declaration += f"    {attrib_name}: {inner_type.__name__}"
+            declaration += f"    {field_name}: {inner_type.__name__}"
         else:
             # Simple type (not an object), just declare we use it.
-            declaration += f"    {attrib_name}: {generate_type(inner_type, imports)}"
+            declaration += f'    "{field_name}": {generate_type(inner_type, imports)}'
 
         declaration += "[]" if was_list else ""
         declaration += " | undefined" if was_optional else ""
@@ -158,41 +150,34 @@ def strip_union_type_wrapper(type_hint: Any) -> typing.Optional[typing.List[type
     return None
 
 
-@attr.define
-class APIResponse:
-    """The base class for any value returned from a @blueprint.api_get_route- or a @blueprint.api_post_route-decorated endpoint."""  # noqa
+class PageProps(BaseModel):
+    """The return class for any React Page"""
 
-    __type__: str = attr.ib(init=False)
-    """A string that uniquely identifies the type of the response."""
 
-    @__type__.default
-    def _set_type(self):
+class APIResponse(BaseModel):
+    """The base class for any value returned from a @beckett.api_get- or a @beckett.api_post endpoints."""  # noqa
+
+    @computed_field
+    @property
+    def __type__(self) -> str:
         return inflection.underscore(self.__class__.__name__)
 
-    __http_status_code__: int = attr.ib(init=False, default=200)
+    __http_status_code__: int
     """The HTTP status code that this response will send."""
 
 
-@attr.define(kw_only=True)
 class BadRequest(APIResponse):
     __http_status_code__: int = 400
-    # TODO i'm undecided on whether we should surface error messages from attrs to the client in these cases. They're
-    #  shown in the server logs, they're not human-readable (they're literally just repr(exception)), and i'm not sure
-    #  the client will have a reason to use them yet. Maybe when we get to doing some kind of form integration, but even
-    #  then the class that defines form errors might not be the same as the one that handles payload parsing failures.
     message: str
 
 
-@attr.define
 class Forbidden(APIResponse):
     __http_status_code__: int = 403
 
 
-@attr.define
 class NotFound(APIResponse):
     __http_status_code__: int = 404
 
 
-@attr.define
 class InternalServerError(APIResponse):
     __http_status_code__: int = 500

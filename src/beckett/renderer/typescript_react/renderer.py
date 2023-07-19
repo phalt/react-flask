@@ -50,6 +50,9 @@ def write_react_page_file(module: str, endpoint: str) -> None:
         )
         with template_path.resolve().open("r") as template_file:
             template_file_content = template_file.read()
+            template_file_content = template_file_content.replace(
+                "{{endpoint}}", endpoint
+            )
         react_page_file_path.parent.mkdir(exist_ok=True)
         with react_page_file_path.resolve().open("w+") as new_file:
             new_file.write(template_file_content)

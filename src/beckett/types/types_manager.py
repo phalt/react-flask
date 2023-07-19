@@ -10,7 +10,7 @@ import attr
 import flask
 import structlog
 import werkzeug
-from attrs_strict import type_validator
+from pydantic import create_model
 
 from src.beckett.converters.typescript import converter, get_request_converter
 from src.beckett.renderer.typescript_react.imports import TypescriptImports
@@ -135,9 +135,7 @@ Please see {_stringify_code_location(unwrap(inspect.currentframe()).f_code)}
         for endpoint, definition in sorted(self._routes.items()):
             endpoint_name = self._get_unique_name(endpoint)
             endpoint_names[endpoint] = (endpoint_name, [])
-
-            attr.resolve_types(definition.request, globals(), locals())
-            if attr.fields(definition.request):
+            if len(definition.request.model_fields.items()) > 0:
                 # Only output types if function has args
                 request_imports, request_interfaces = generate_interfaces(
                     definition.request, name=endpoint_name + "Request"
@@ -149,7 +147,7 @@ Please see {_stringify_code_location(unwrap(inspect.currentframe()).f_code)}
                 if isinstance(None, response):
                     continue
 
-                attr.resolve_types(response, globals(), locals())
+                # attr.resolve_types(response, globals(), locals())
 
                 response_type_name = self._get_unique_name(endpoint_name + "Response")
                 endpoint_names[endpoint][1].append(response_type_name)
@@ -182,7 +180,9 @@ Please see {_stringify_code_location(unwrap(inspect.currentframe()).f_code)}
             )
 
             request_type = (
-                endpoint_name + "Request" if attr.fields(d.request) else undefined
+                endpoint_name + "Request"
+                if len(d.request.model_fields.items()) > 0
+                else undefined
             )
             return (
                 f"    // {_stringify_code_location(d.code)}\n"
@@ -232,13 +232,12 @@ def strip_optional_type_wrapper(type_hint: Any) -> Tuple[type, bool]:
         return type_hint, False
 
 
-def _make_attrib(raw_type: type) -> attr.Attribute:
+def _make_field(raw_type: type):
     _, is_optional = strip_optional_type_wrapper(raw_type)
 
-    return attr.ib(
-        type=raw_type,
-        validator=type_validator(),
-        default=None if is_optional else attr.NOTHING,
+    return (
+        raw_type,
+        None if is_optional else attr.NOTHING,
     )
 
 
@@ -261,8 +260,8 @@ def generate_request_response_classes(
         ), "Function must return APIResponse or None"
 
     # Build request class based on parameter names
-    Request = attr.make_class(
-        "Request", {k: _make_attrib(v) for k, v in request_hints.items()}
+    Request = create_model(
+        "Request", **{k: _make_field(v) for k, v in request_hints.items()}
     )
 
     return Request, response_types

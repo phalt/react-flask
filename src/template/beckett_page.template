@@ -1,6 +1,5 @@
 import React from 'react'
-// Note: you'll need to update this path!
-import PageProps from './page.type'
+import PageProps from './{{endpoint}}.type'
 import {Container, Row} from 'react-bootstrap'
 
 const Page: React.FunctionComponent<PageProps> = (props) => {
@@ -9,7 +8,7 @@ const Page: React.FunctionComponent<PageProps> = (props) => {
             <Row className="mb-4 border-bottom">
                 <h1>Hello, React!</h1>
                 <p>
-                    Here are my props: <code>{props}</code>
+                    Here are your props: <code>{Object.keys(props).map(p => <p>{p} : {props[p]}</p>)}</code>
                 </p>
             </Row>
         </Container>

@@ -9,14 +9,12 @@ The first major feature we built was strongly-linked types.
 Beckett takes your [Python Typehints](https://docs.python.org/3/library/typing.html) and auto-generates [TypeScript interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html) to maintain type integrity across both languages. It does this automatically for any API endpoints in the Flask web server using the Beckett decorators.
 
 ```py title="src/views/people.py" linenums="1"
-import attrs
 from src.app import app
 from src.beckett.blueprint import BeckettBlueprint
 from src.beckett.types import APIResponse
 
 blueprint = BeckettBlueprint("people", __name__, url_prefix="/people")
 
-@attrs.define
 class GetPeopleResponse(APIResponse):
     name: str
 
@@ -61,14 +59,14 @@ import attrs
 
 from src.app import app
 from src.beckett.blueprint import BeckettBlueprint
+from src.beckett.types import PageProps
 
 beckett = BeckettBlueprint("people", __name__, url_prefix="/people")
 
 # Hiding other endpoints for clarity
 ...
 
-@attrs.define
-class ExamplePageProps:
+class ExamplePageProps(PageProps):
     hello: str
 
 @beckett.route("/")

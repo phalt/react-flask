@@ -6,8 +6,6 @@ Please see beckett_framework/src/beckett/types/types_manager.py
 
 // prettier-ignore
 export interface PeopleGetPeopleResponse {
-    "__type__": string
-    "__http_status_code__": number
     "name": string
 }
 
@@ -18,8 +16,6 @@ export interface PeoplePostExampleRequest {
 
 // prettier-ignore
 export interface PeoplePostExampleResponse {
-    "__type__": string
-    "__http_status_code__": number
     "result": string
 }
 

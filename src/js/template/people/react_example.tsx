@@ -8,7 +8,14 @@ const Page: React.FunctionComponent<PageProps> = props => {
             <Row className="mb-4 border-bottom">
                 <h1>Hello, React!</h1>
                 <p>
-                    Here are my props: <code>{props.good}</code>
+                    Here are your props:{' '}
+                    <code>
+                        {Object.keys(props).map(p => (
+                            <p>
+                                {p} : {props[p]}
+                            </p>
+                        ))}
+                    </code>
                 </p>
             </Row>
         </Container>

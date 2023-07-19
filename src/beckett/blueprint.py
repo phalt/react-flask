@@ -18,7 +18,7 @@ log = structlog.get_logger(__name__)
 
 class BeckettBlueprint(flask.Blueprint):
     """
-    Handles strong-linking between Flask view functions
+    Handles the strong-linking between Flask view functions
     and React pages.
     """
 
@@ -30,8 +30,7 @@ class BeckettBlueprint(flask.Blueprint):
 
             beckett = BeckettBlueprint()
 
-            @attr.define
-            class PreferencesProps:
+            class PreferencesProps(PageProps):
                 max_widgets: int
 
             @beckett.route("/get-preferences")
@@ -41,8 +40,8 @@ class BeckettBlueprint(flask.Blueprint):
                     max_widgets=4,
                 )
 
-        The return value can either be `None`, or an attrs class.
-        If it's an attrs class, it will be used as props for the React component.
+        The return value must be a src.beckett.types.PageProps class.
+        It will be transformed into props for the React page.
         """
 
         template: str
@@ -97,18 +96,11 @@ class BeckettBlueprint(flask.Blueprint):
         def _write_typescript_type_file(self):
             if self.return_type == NoneType:
                 return
-
-            # The endpoint has declared a return type. Endpoints are allowed to declare they return None. If they don't
-            # (which will be the vast majority of them), we treat the return type as props for the page-level react
-            # component.
-            assert getattr(self.return_type, "__attrs_attrs__", False), (
-                f"Endpoint {self.module}.{self.name} missing attrs return annotation (which is required by"
+            assert getattr(self.return_type, "__pydantic_complete__", False), (
+                f"Endpoint {self.module}.{self.name} missing pydantic return annotation (which is required by"
                 f"@beckett.page())."
             )
-
-            # If a react component file for this view function doesn't exist yet, create a basic one
             write_react_page_file(module=self.module, endpoint=self.name)
-
             write_typescript_file(
                 type_data=self._generate_typescript_type_file_contents(),
                 module=self.module,

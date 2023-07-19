@@ -18,3 +18,8 @@ def json(q, default=None):  # type: ignore
     import json
 
     return json.dumps(q)
+
+
+@app.template_filter()
+def pydantic_model_dump(model):  # type: ignore
+    return model.model_dump_json()

@@ -20,15 +20,13 @@ We translate Python TypeHints into these TypeScript types, and vice versa:
 
 ## Nested types
 
-Nested `attrs` classes are converted infinitely:
+Nested model classes are converted infinitely:
 
 ```py linenums="1" title="example.py"
 
-@attrs.define
 class Subclass:
     hello: str
 
-@attrs.define
 class ExamplePageProps:
     test: Subclass
 ```
