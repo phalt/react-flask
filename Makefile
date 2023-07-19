@@ -26,4 +26,8 @@ lint:  ## Run linting on the project
 mypy:  ## Check typing
 	mypy src/
 
+
+doc:  # Run the documtation server
+	mkdocs serve
+
 .PHONY: serve
