@@ -1,5 +1,5 @@
 """
-A simple example Flask Render React app
+A simple example Beckett app
 """
 
 

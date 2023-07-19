@@ -20,13 +20,9 @@ Both TypeScript and Python hold their positions as two of the [most widely used 
 
 However, setting up a smooth and efficient development environment that harmoniously integrates these languages can be a cumbersome and time-consuming process, often leading to a subpar developer experience. Thankfully, Beckett steps in to solve this challenge by tightly coupling TypeScript and Python into one cohesive framework.
 
-## Unleasing Their Individual Potential
+## Currently in development
 
-Beckett recognizes that each language excels in different domains and allows you to leverage their strengths as needed. 
-
-You can continue to write Flask views just as you would in a typical Flask application.
-
-In the same way - you can harness the power of React TypeScript for your frontend development. Write your React components and TypeScript code as you would in any other React application, and effortlessly incorporate any JavaScript library you desire by using `yarn add` to meet the specific requirements of your project.
+Before this becomes a fully fledged package, it exists as a decent template that can be forked when you start a new project and worked on from there.
 
 ## Set up
 
