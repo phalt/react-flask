@@ -4,8 +4,8 @@ from decimal import Decimal
 from typing import Any, Literal, Tuple, Union, get_args, get_origin
 from uuid import UUID
 
-import inflection
-from pydantic import BaseModel, computed_field
+from pydantic import BaseModel
+from pydantic.fields import FieldInfo
 
 from src.beckett.renderer.typescript_react.imports import TypescriptImports
 from src.beckett.renderer.typescript_react.interfaces import TypescriptInterfaces
@@ -74,7 +74,7 @@ def generate_interfaces(
 
     for field_name, field_info in cls.model_fields.items():
         # check to see if it is wrapped in a typing.Optional[]
-        inner_type, was_optional = strip_optional_type_wrapper(field_info.annotation)
+        inner_type, was_optional = strip_optional_type_wrapper(field_info)
 
         # check to see if it is wrapped in a typing.List[]
         inner_type, was_list = strip_list_type_wrapper(inner_type)
@@ -117,16 +117,18 @@ def generate_interfaces(
     return imports, interfaces
 
 
-def strip_optional_type_wrapper(type_hint: Any) -> typing.Tuple[type, bool]:
+def strip_optional_type_wrapper(
+    field_info: FieldInfo,
+) -> typing.Tuple[type | None, bool]:
     """Given a type, get rid of the typing.Optional wrapping it, if there is one."""
-    origin = typing.get_origin(type_hint)
-    args = typing.get_args(type_hint)
+    origin = typing.get_origin(field_info.annotation)
+    args = typing.get_args(field_info.annotation)
 
     if origin is Union and len(args) == 2 and NoneType in args:
         inner_type = next(a for a in args if a is not NoneType)
         return inner_type, True
     else:
-        return type_hint, False
+        return field_info.annotation, False
 
 
 def strip_list_type_wrapper(type_hint: Any) -> typing.Tuple[type, bool]:
@@ -157,27 +159,22 @@ class PageProps(BaseModel):
 class APIResponse(BaseModel):
     """The base class for any value returned from a @beckett.api_get- or a @beckett.api_post endpoints."""  # noqa
 
-    @computed_field
-    @property
-    def __type__(self) -> str:
-        return inflection.underscore(self.__class__.__name__)
-
-    __http_status_code__: int
+    status_code: int = 200
     """The HTTP status code that this response will send."""
 
 
 class BadRequest(APIResponse):
-    __http_status_code__: int = 400
+    status_code: int = 400
     message: str
 
 
 class Forbidden(APIResponse):
-    __http_status_code__: int = 403
+    status_code: int = 403
 
 
 class NotFound(APIResponse):
-    __http_status_code__: int = 404
+    status_code: int = 404
 
 
 class InternalServerError(APIResponse):
-    __http_status_code__: int = 500
+    status_code: int = 500

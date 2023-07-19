@@ -3,5 +3,4 @@
 // prettier-ignore
 export default interface PageProps {
     "good": string
-    "number": number
 }

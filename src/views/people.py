@@ -25,7 +25,7 @@ def get_people() -> GetPeopleResponse:
     """
     This is an example API GET route.
     """
-    return GetPeopleResponse(name="Paul", number=2, names=["Cool", "dude"])
+    return GetPeopleResponse(name="Paul")
 
 
 class PostRouteResponse(APIResponse):
@@ -42,13 +42,12 @@ def post_example(parameter_one: str) -> PostRouteResponse:
 
 class ExamplePageProps(PageProps):
     good: str
-    number: int
 
 
 @beckett.route("/")
 @beckett.page()
 def react_example() -> ExamplePageProps:
-    return ExamplePageProps(good="day", number=1)
+    return ExamplePageProps(good="day")
 
 
 @beckett.route("/test/<name>")

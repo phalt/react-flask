@@ -10,7 +10,7 @@ import attr
 import flask
 import structlog
 import werkzeug
-from pydantic import create_model
+from pydantic import BaseModel, create_model
 
 from src.beckett.converters.typescript import converter, get_request_converter
 from src.beckett.renderer.typescript_react.imports import TypescriptImports
@@ -44,7 +44,7 @@ def _stringify_code_location(code: CodeType) -> str:
 @dataclass
 class RouteDefinition:
     method: str
-    request: type
+    request: BaseModel
     responses: typing.List[Union[Type[APIResponse], Type[None]]]
     endpoint: str
     code: CodeType
@@ -220,7 +220,7 @@ Please see {_stringify_code_location(unwrap(inspect.currentframe()).f_code)}
 api_route_type_manager = APIRouteTypeManager()
 
 
-def strip_optional_type_wrapper(type_hint: Any) -> Tuple[type, bool]:
+def _strip_optional_type_wrapper(type_hint: Any) -> Tuple[type, bool]:
     """Given a type, get rid of the typing.Optional wrapping it, if there is one."""
     origin = typing.get_origin(type_hint)
     args = typing.get_args(type_hint)
@@ -233,7 +233,7 @@ def strip_optional_type_wrapper(type_hint: Any) -> Tuple[type, bool]:
 
 
 def _make_field(raw_type: type):
-    _, is_optional = strip_optional_type_wrapper(raw_type)
+    _, is_optional = _strip_optional_type_wrapper(raw_type)
 
     return (
         raw_type,
@@ -272,7 +272,7 @@ def api_response_as_flask_response(response: APIResponse) -> flask.Response:
     flask_response = flask.Response(
         json.dumps(converter.unstructure(response)), mimetype="application/json"
     )
-    flask_response.status_code = response.__http_status_code__
+    flask_response.status_code = response.status_code
 
     return flask_response
 
