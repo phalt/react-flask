@@ -1,0 +1,1022 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../todo/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+    
+    
+      
+        <title>📝 Tutorial - Beckett Framework</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorial" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Beckett Framework" class="md-header__button md-logo" aria-label="Beckett Framework" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Beckett Framework
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              📝 Tutorial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Beckett Framework" class="md-nav__button md-logo" aria-label="Beckett Framework" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Beckett Framework
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        💫 Beckett Framework
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        🏗️ Install
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../todo/" class="md-nav__link">
+        📋 TODO
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          📝 Tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        📝 Tutorial
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#early-days" class="md-nav__link">
+    Early days
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-your-first-view" class="md-nav__link">
+    Add your first view
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#turn-it-into-a-react-page" class="md-nav__link">
+    Turn it into a React page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-an-api-view" class="md-nav__link">
+    Add an API view
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-api-client" class="md-nav__link">
+    Using the API Client
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apis-with-input-parameters" class="md-nav__link">
+    APIs with input parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-post-requests" class="md-nav__link">
+    API Post requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refreshing-requests" class="md-nav__link">
+    Refreshing requests
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#early-days" class="md-nav__link">
+    Early days
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-your-first-view" class="md-nav__link">
+    Add your first view
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#turn-it-into-a-react-page" class="md-nav__link">
+    Turn it into a React page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-an-api-view" class="md-nav__link">
+    Add an API view
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-api-client" class="md-nav__link">
+    Using the API Client
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apis-with-input-parameters" class="md-nav__link">
+    APIs with input parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-post-requests" class="md-nav__link">
+    API Post requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refreshing-requests" class="md-nav__link">
+    Refreshing requests
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="tutorial">📝 Tutorial</h1>
+<h2 id="early-days">Early days</h2>
+<p>Before this becomes a fully fledged package, this project exists as a template you can fork and build from. My advice for getting started is to build ontop of what already exists, and use the existing routes until you understand it, then you can delete it!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example will work you through making a simple Bookshop app and API.</p>
+</div>
+<h2 id="add-your-first-view">Add your first view</h2>
+<p>In <code>src.views</code> add a new file called <code>books.py</code> and add the following code:</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/views/books.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">src.app</span> <span class="kn">import</span> <span class="n">app</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">src.beckett.blueprint</span> <span class="kn">import</span> <span class="n">BeckettBlueprint</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">beckett</span> <span class="o">=</span> <span class="n">BeckettBlueprint</span><span class="p">(</span><span class="s2">&quot;books&quot;</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">,</span> <span class="n">url_prefix</span><span class="o">=</span><span class="s2">&quot;/books&quot;</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nd">@beckett</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;My books&quot;</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="n">app</span><span class="o">.</span><span class="n">register_blueprint</span><span class="p">(</span><span class="n">beckett</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Then in <code>src.views.__init__</code> we just need to do a small update as seen on line 2:</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/views/__init__.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">src.views</span> <span class="kn">import</span> <span class="n">people</span><span class="p">,</span> <span class="n">index</span>  <span class="c1"># noqa</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="hll"><span class="kn">from</span> <span class="nn">.books</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span></code></pre></div></td></tr></table></div>
+<p>This small import will let the Flask/BeckettApp know to include your views file in the application.</p>
+<p>At this point you can now visit <a href="http://localhost:9000/books/">http://localhost:9000/books/</a> to see a simple API response.</p>
+<h2 id="turn-it-into-a-react-page">Turn it into a React page</h2>
+<p>Let's make this simple API response become something far more interesting - a whole react page!</p>
+<p>We only need to make a few changes:</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/views/books.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">src.app</span> <span class="kn">import</span> <span class="n">app</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">from</span> <span class="nn">src.beckett.blueprint</span> <span class="kn">import</span> <span class="n">BeckettBlueprint</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="hll"><span class="kn">from</span> <span class="nn">src.beckett.types</span> <span class="kn">import</span> <span class="n">PageProps</span>
+</span></span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">beckett</span> <span class="o">=</span> <span class="n">BeckettBlueprint</span><span class="p">(</span><span class="s2">&quot;books&quot;</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">,</span> <span class="n">url_prefix</span><span class="o">=</span><span class="s2">&quot;/books&quot;</span><span class="p">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="hll"><span class="k">class</span> <span class="nc">HomePageProps</span><span class="p">(</span><span class="n">PageProps</span><span class="p">):</span>
+</span></span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="hll">    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+</span></span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="hll">
+</span></span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="hll">
+</span></span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="nd">@beckett</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="hll"><span class="nd">@beckett</span><span class="o">.</span><span class="n">page</span><span class="p">()</span>
+</span></span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="hll"><span class="k">def</span> <span class="nf">home</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">HomePageProps</span><span class="p">:</span>
+</span></span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="hll">    <span class="k">return</span> <span class="n">HomePageProps</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;My books&quot;</span><span class="p">)</span>
+</span></span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="n">app</span><span class="o">.</span><span class="n">register_blueprint</span><span class="p">(</span><span class="n">beckett</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Quite a few interesting things should happen when you save the file - you'll see two brand new files appear in the <code>src/js/templates</code> directory.
+I know you want to inspect them and see what has changed, but for now let us go over the changes in the <code>books.py</code> file first:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">src.beckett.types</span> <span class="kn">import</span> <span class="n">PageProps</span>
+</span></code></pre></div>
+<p>The <code>PageProps</code> baseclass should be used for all React pages.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">class</span> <span class="nc">HomePageProps</span><span class="p">(</span><span class="n">PageProps</span><span class="p">):</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+</span></code></pre></div>
+<p>This is the response type of your React page, and will be transformed into an equivalent Typescript interface. You can inspect the sibling interface now in <code>src/js/template/books/home.type.ts</code>:</p>
+<div class="language-ts highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">PageProps</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Notice how the name of the interface has changed? This is because each React page in Beckett only has one set of initial props for a page load, and this naming convention helps to pick it out.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nd">@beckett</span><span class="o">.</span><span class="n">page</span><span class="p">()</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">def</span> <span class="nf">home</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">HomePageProps</span><span class="p">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="k">return</span> <span class="n">HomePageProps</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;My books&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Here you will see we have updated the Flask view function with a return type, our <code>HomePageProps</code>, that we wrote earlier.</p>
+<p>We have also updated the return line to return an instance of that class.</p>
+<p>The one line of code that makes this all magically generate the files is <code>beckett.page()</code>. This decorator inspects all the associated pages when the server is in development mode, and if it can't find a related TypeScript file for it, it will generate it for you. </p>
+<p>Here are the files it has generated for us:</p>
+<ul>
+<li><code>src/js/template/books/home.tsx</code></li>
+<li><code>src/js/template/books.home.type.ts</code></li>
+</ul>
+<p>Notice how Beckett has intelligently figured out the directory and the file name from the name of the python file and the view function.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Sometimes when a new file is generated you need to run <code>make web</code> again for the page to load - this is only a problem the first time and we're working to fix that bug.</p>
+</div>
+<p>If you refresh your browser at <a href="http://localhost:9000/books/">http://localhost:9000/books/</a> you should see a react page with the default template information from <code>src/js/template/books/home.tsx</code>.</p>
+<h2 id="add-an-api-view">Add an API view</h2>
+<p>React is most useful when we can make concurrent API requests to our application server and return content.</p>
+<p>Beckett manages API views that we can be used in our React pages. Let's make one now.</p>
+<p>Add this just the <code>home</code> view function:</p>
+<p><div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/views/books.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-17">17</a></span>
+<span class="normal"><a href="#__codelineno-7-18">18</a></span>
+<span class="normal"><a href="#__codelineno-7-19">19</a></span>
+<span class="normal"><a href="#__codelineno-7-20">20</a></span>
+<span class="normal"><a href="#__codelineno-7-21">21</a></span>
+<span class="normal"><a href="#__codelineno-7-22">22</a></span>
+<span class="normal"><a href="#__codelineno-7-23">23</a></span>
+<span class="normal"><a href="#__codelineno-7-24">24</a></span>
+<span class="normal"><a href="#__codelineno-7-25">25</a></span>
+<span class="normal"><a href="#__codelineno-7-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="kn">from</span> <span class="nn">src.beckett.types</span> <span class="kn">import</span> <span class="n">APIResponse</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18"></a>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="k">class</span> <span class="nc">BookResponse</span><span class="p">(</span><span class="n">APIResponse</span><span class="p">):</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20"></a>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21"></a>    <span class="n">author</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22"></a>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23"></a>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="nd">@beckett</span><span class="o">.</span><span class="n">api_get</span><span class="p">(</span><span class="s2">&quot;/details&quot;</span><span class="p">)</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="k">def</span> <span class="nf">details</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">BookResponse</span><span class="p">:</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26"></a>    <span class="k">return</span> <span class="n">BookResponse</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Gideon the Ninth&quot;</span><span class="p">,</span> <span class="n">author</span><span class="o">=</span><span class="s2">&quot;Tamsyn Muir.&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+Hit save and you should see some files change again (that happens a lot with Beckett). Let's go over this change quickly.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span> <span class="nn">src.beckett.types</span> <span class="kn">import</span> <span class="n">APIResponse</span>
+</span></code></pre></div>
+<p>All of Beckett's API Views must return a subclass of <code>APIResponse</code>. There are a few generic helpers in <code>src.beckett.types</code> too if you want to return common responses like <code>Forbidden</code> or <code>NotFound</code>.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">class</span> <span class="nc">BookResponse</span><span class="p">(</span><span class="n">APIResponse</span><span class="p">):</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="n">author</span><span class="p">:</span> <span class="nb">str</span>
+</span></code></pre></div>
+<p>The <code>BookResponse</code> is the response class we're using for our API. You'll see in <code>src/js/api/types.ts</code> that this gets transformed into a TypeScript interface:</p>
+<div class="language-ts highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/js/api/types.ts</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="k">export</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">BooksDetailsResponse</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">    </span><span class="s2">&quot;status_code&quot;</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">    </span><span class="s2">&quot;author&quot;</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>This all happens because of the decorator function <code>beckett.api_get</code>:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nd">@beckett</span><span class="o">.</span><span class="n">api_get</span><span class="p">(</span><span class="s2">&quot;/details&quot;</span><span class="p">)</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">def</span> <span class="nf">details</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">BookResponse</span><span class="p">:</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="k">return</span> <span class="n">BookResponse</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Gideon the Ninth&quot;</span><span class="p">,</span> <span class="n">author</span><span class="o">=</span><span class="s2">&quot;Tamsyn Muir.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Similar to <code>beckett.api</code> - this decorator will inspect the view functions when in development mode, and generate appropriate TypeScript interfaces for you.</p>
+<p>This interface is available in our TypeScript code now, but we don't acutally need to plug it into our APIClient, because Beckett has done that already for us! </p>
+<p>Have a look further down the <code>types.ts</code> file:</p>
+<div class="language-ts highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/js/api/types.ts</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-32">32</a></span>
+<span class="normal"><a href="#__codelineno-12-33">33</a></span>
+<span class="normal"><a href="#__codelineno-12-34">34</a></span>
+<span class="normal"><a href="#__codelineno-12-35">35</a></span>
+<span class="normal"><a href="#__codelineno-12-36">36</a></span>
+<span class="normal"><a href="#__codelineno-12-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32"></a><span class="k">export</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">GET_MAP</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-33"><a id="__codelineno-12-33" name="__codelineno-12-33"></a><span class="hll"><span class="w">    </span><span class="c1">// beckett_framework/src/views/books.py</span>
+</span></span><span id="__span-12-34"><a id="__codelineno-12-34" name="__codelineno-12-34"></a><span class="hll"><span class="w">    </span><span class="s2">&quot;books.details&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">undefined</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="o">:</span><span class="w"> </span><span class="kt">BooksDetailsResponse</span><span class="p">}</span>
+</span></span><span id="__span-12-35"><a id="__codelineno-12-35" name="__codelineno-12-35"></a><span class="w">    </span><span class="c1">// beckett_framework/src/views/people.py</span>
+</span><span id="__span-12-36"><a id="__codelineno-12-36" name="__codelineno-12-36"></a><span class="w">    </span><span class="s2">&quot;people.get_people&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">undefined</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="o">:</span><span class="w"> </span><span class="kt">PeopleGetPeopleResponse</span><span class="p">}</span>
+</span><span id="__span-12-37"><a id="__codelineno-12-37" name="__codelineno-12-37"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>The <code>GET_MAP</code> has updated to include the request (currently none) and response types for this API endpoint. So how do we use it?</p>
+<h2 id="using-the-api-client">Using the API Client</h2>
+<p>Let's write some typescript shall we?</p>
+<p>Open up <code>src/js/template/books/home.tsx</code> and make these changes:</p>
+<div class="language-ts highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/js/template/books/home.tsx</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span>
+<span class="normal"><a href="#__codelineno-13-14">14</a></span>
+<span class="normal"><a href="#__codelineno-13-15">15</a></span>
+<span class="normal"><a href="#__codelineno-13-16">16</a></span>
+<span class="normal"><a href="#__codelineno-13-17">17</a></span>
+<span class="normal"><a href="#__codelineno-13-18">18</a></span>
+<span class="normal"><a href="#__codelineno-13-19">19</a></span>
+<span class="normal"><a href="#__codelineno-13-20">20</a></span>
+<span class="normal"><a href="#__codelineno-13-21">21</a></span>
+<span class="normal"><a href="#__codelineno-13-22">22</a></span>
+<span class="normal"><a href="#__codelineno-13-23">23</a></span>
+<span class="normal"><a href="#__codelineno-13-24">24</a></span>
+<span class="normal"><a href="#__codelineno-13-25">25</a></span>
+<span class="normal"><a href="#__codelineno-13-26">26</a></span>
+<span class="normal"><a href="#__codelineno-13-27">27</a></span>
+<span class="normal"><a href="#__codelineno-13-28">28</a></span>
+<span class="normal"><a href="#__codelineno-13-29">29</a></span>
+<span class="normal"><a href="#__codelineno-13-30">30</a></span>
+<span class="normal"><a href="#__codelineno-13-31">31</a></span>
+<span class="normal"><a href="#__codelineno-13-32">32</a></span>
+<span class="normal"><a href="#__codelineno-13-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">PageProps</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./home.type&#39;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">Container</span><span class="p">,</span><span class="w"> </span><span class="nx">Row</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-bootstrap&#39;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useGet</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;~/api/query&#39;</span>
+</span></span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">Page</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FunctionComponent</span><span class="o">&lt;</span><span class="nx">PageProps</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">props</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="hll"><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">data</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useGet</span><span class="p">(</span><span class="s2">&quot;books.details&quot;</span><span class="p">)</span>
+</span></span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">Row</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;mb-4 border-bottom&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="w">                </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span><span class="w"> </span><span class="nx">React</span><span class="o">!&lt;</span><span class="err">/h1&gt;</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="w">                </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="w">                    </span><span class="nx">Here</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">props</span><span class="o">:</span><span class="p">{</span><span class="s1">&#39; &#39;</span><span class="p">}</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="w">                    </span><span class="o">&lt;</span><span class="nx">code</span><span class="o">&gt;</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="w">                        </span><span class="p">{</span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">props</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="w">                            </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17"></a><span class="w">                                </span><span class="p">{</span><span class="nx">p</span><span class="p">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">props</span><span class="p">[</span><span class="nx">p</span><span class="p">]}</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18"></a><span class="w">                            </span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19"></a><span class="w">                        </span><span class="p">))}</span>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20"></a><span class="w">                    </span><span class="o">&lt;</span><span class="err">/code&gt;</span>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21"></a><span class="w">                </span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22"></a><span class="hll"><span class="w">                </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23"></a><span class="hll"><span class="w">                    </span><span class="nx">Book</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span>
+</span></span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24"></a><span class="hll"><span class="w">                </span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span></span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25"></a><span class="hll"><span class="w">                </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></span><span id="__span-13-26"><a id="__codelineno-13-26" name="__codelineno-13-26"></a><span class="hll"><span class="w">                    </span><span class="nx">Book</span><span class="w"> </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">author</span><span class="p">}</span>
+</span></span><span id="__span-13-27"><a id="__codelineno-13-27" name="__codelineno-13-27"></a><span class="hll"><span class="w">                </span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span></span><span id="__span-13-28"><a id="__codelineno-13-28" name="__codelineno-13-28"></a><span class="w">            </span><span class="o">&lt;</span><span class="err">/Row&gt;</span>
+</span><span id="__span-13-29"><a id="__codelineno-13-29" name="__codelineno-13-29"></a><span class="w">        </span><span class="o">&lt;</span><span class="err">/Container&gt;</span>
+</span><span id="__span-13-30"><a id="__codelineno-13-30" name="__codelineno-13-30"></a><span class="w">    </span><span class="p">)</span>
+</span><span id="__span-13-31"><a id="__codelineno-13-31" name="__codelineno-13-31"></a><span class="p">}</span>
+</span><span id="__span-13-32"><a id="__codelineno-13-32" name="__codelineno-13-32"></a>
+</span><span id="__span-13-33"><a id="__codelineno-13-33" name="__codelineno-13-33"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Page</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Let's go over these changes so they make sense.</p>
+<div class="language-ts highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useGet</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;~/api/query&#39;</span>
+</span></code></pre></div>
+<p><code>useGet</code> is a <a href="https://react.dev/reference/react">React Hook</a> that provides access to all the registered API views in our Beckett application.</p>
+<p>It uses the <code>GET_MAP</code> to make sure the request and responses remain consistent.</p>
+<div class="language-ts highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">data</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useGet</span><span class="p">(</span><span class="s2">&quot;books.details&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>We do not need to provide any inputs to the <code>useGet</code> function except for the API view we want to call - in this case it will always be the <code>file_name.view_function</code> pattern. In fact, if you typed the example out letter by letter you would've noticed that it provided autocomplete!</p>
+<p>Because Beckett's React pages use <a href="https://react.dev/reference/react/Suspense">React suspense</a> - it gracefully handles the loading state for you. This means that the page will not render until the API call has returned a response.</p>
+<div class="language-ts highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nx">Book</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nx">Book</span><span class="w"> </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">author</span><span class="p">}</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span></code></pre></div>
+<p>Because we don't need to worry about the loading state, we can safely apply the values from the API call into our React page.</p>
+<h2 id="apis-with-input-parameters">APIs with input parameters</h2>
+<p>Let's grow our API functionality even more by making it require an input value. We'll update the API View first:</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/views/books.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-23">23</a></span>
+<span class="normal"><a href="#__codelineno-17-24">24</a></span>
+<span class="normal"><a href="#__codelineno-17-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23"></a><span class="nd">@beckett</span><span class="o">.</span><span class="n">api_get</span><span class="p">(</span><span class="s2">&quot;/details&quot;</span><span class="p">)</span>
+</span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24"></a><span class="hll"><span class="k">def</span> <span class="nf">details</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BookResponse</span><span class="p">:</span>
+</span></span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25"></a><span class="hll">    <span class="k">return</span> <span class="n">BookResponse</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">author</span><span class="o">=</span><span class="s2">&quot;Tamsyn Muir.&quot;</span><span class="p">)</span>
+</span></span></code></pre></div></td></tr></table></div>
+<p>The only thing we've changed here is we've added an input parameter <code>name</code>, which is a <code>str</code>, and then returned it in our API Response. This is just a simple demonstrative example, but you could imagine making database queries or doing some complex maths here - it's just Python after all!</p>
+<p>When you save this, you'll notice a new TypeScript interface will be generated in <code>src/js/api/types.ts</code>:</p>
+<div class="language-ts highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/js/api/types.ts</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="k">export</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">BooksDetailsRequest</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>This new request interface will be mapped to the <code>GET_MAP</code> in the same file:</p>
+<div class="language-ts highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/js/api/types.ts</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-37">37</a></span>
+<span class="normal"><a href="#__codelineno-19-38">38</a></span>
+<span class="normal"><a href="#__codelineno-19-39">39</a></span>
+<span class="normal"><a href="#__codelineno-19-40">40</a></span>
+<span class="normal"><a href="#__codelineno-19-41">41</a></span>
+<span class="normal"><a href="#__codelineno-19-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-37"><a id="__codelineno-19-37" name="__codelineno-19-37"></a><span class="k">export</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">GET_MAP</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-38"><a id="__codelineno-19-38" name="__codelineno-19-38"></a><span class="w">    </span><span class="c1">// beckett_framework/src/views/books.py</span>
+</span><span id="__span-19-39"><a id="__codelineno-19-39" name="__codelineno-19-39"></a><span class="hll"><span class="w">    </span><span class="s2">&quot;books.details&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">BooksDetailsRequest</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="o">:</span><span class="w"> </span><span class="kt">BooksDetailsResponse</span><span class="p">}</span>
+</span></span><span id="__span-19-40"><a id="__codelineno-19-40" name="__codelineno-19-40"></a><span class="w">    </span><span class="c1">// beckett_framework/src/views/people.py</span>
+</span><span id="__span-19-41"><a id="__codelineno-19-41" name="__codelineno-19-41"></a><span class="w">    </span><span class="s2">&quot;people.get_people&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">undefined</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="o">:</span><span class="w"> </span><span class="kt">PeopleGetPeopleResponse</span><span class="p">}</span>
+</span><span id="__span-19-42"><a id="__codelineno-19-42" name="__codelineno-19-42"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>In fact, if you try and refresh the browser at <a href="http://localhost:9000/books/">http://localhost:9000/books/</a> you'll see this take affect immediately - the page will crash! This is because the <code>name</code> value in the request is a required parameter.</p>
+<p>Let's update our React app so we can send input data to our API Client.</p>
+<div class="language-ts highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/js/template/books/home.tsx</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span>
+<span class="normal"><a href="#__codelineno-20-3">3</a></span>
+<span class="normal"><a href="#__codelineno-20-4">4</a></span>
+<span class="normal"><a href="#__codelineno-20-5">5</a></span>
+<span class="normal"><a href="#__codelineno-20-6">6</a></span>
+<span class="normal"><a href="#__codelineno-20-7">7</a></span>
+<span class="normal"><a href="#__codelineno-20-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">PageProps</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./home.type&#39;</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">Container</span><span class="p">,</span><span class="w"> </span><span class="nx">Row</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-bootstrap&#39;</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useGet</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;~/api/query&#39;</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5"></a>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">Page</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FunctionComponent</span><span class="o">&lt;</span><span class="nx">PageProps</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">props</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="hll"><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">data</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useGet</span><span class="p">(</span><span class="s2">&quot;books.details&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;My book&quot;</span><span class="p">})</span>
+</span></span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="w">    </span><span class="p">...</span>
+</span></code></pre></div></td></tr></table></div>
+<p>For the sake of brevity we've removed a bunch of this code in the tutorial. The only change needed is to pass an object with the required parameters to the API and then the page should load fine. You'll notice as you type of the object it will give you hints as to the expected input parameters.</p>
+<p>Magic, eh?</p>
+<h2 id="api-post-requests">API Post requests</h2>
+<p>Now that we've built an API that accepts data and returns it, let's build something more functional. How about an HTTP POST API View?</p>
+<p>What's the difference between a POST view and a GET view in Beckett?</p>
+<ul>
+<li>HTTP GET views format the input parameters as query parameters and are great for loading content quickly.</li>
+<li>HTTP POST views receive their inputs as JSON in the HTTP Body and accept much more content.</li>
+<li>HTTP POST views are preferred when we want to make state changes to our application.</li>
+</ul>
+<p>First things first, let's add a new View to our API:</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/views/books.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-28">28</a></span>
+<span class="normal"><a href="#__codelineno-21-29">29</a></span>
+<span class="normal"><a href="#__codelineno-21-30">30</a></span>
+<span class="normal"><a href="#__codelineno-21-31">31</a></span>
+<span class="normal"><a href="#__codelineno-21-32">32</a></span>
+<span class="normal"><a href="#__codelineno-21-33">33</a></span>
+<span class="normal"><a href="#__codelineno-21-34">34</a></span>
+<span class="normal"><a href="#__codelineno-21-35">35</a></span>
+<span class="normal"><a href="#__codelineno-21-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-28"><a id="__codelineno-21-28" name="__codelineno-21-28"></a><span class="k">class</span> <span class="nc">BookUpdateResponse</span><span class="p">(</span><span class="n">APIResponse</span><span class="p">):</span>
+</span><span id="__span-21-29"><a id="__codelineno-21-29" name="__codelineno-21-29"></a>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-21-30"><a id="__codelineno-21-30" name="__codelineno-21-30"></a>    <span class="n">author</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-21-31"><a id="__codelineno-21-31" name="__codelineno-21-31"></a>
+</span><span id="__span-21-32"><a id="__codelineno-21-32" name="__codelineno-21-32"></a>
+</span><span id="__span-21-33"><a id="__codelineno-21-33" name="__codelineno-21-33"></a><span class="nd">@beckett</span><span class="o">.</span><span class="n">api_post</span><span class="p">(</span><span class="s2">&quot;/add&quot;</span><span class="p">)</span>
+</span><span id="__span-21-34"><a id="__codelineno-21-34" name="__codelineno-21-34"></a><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">author</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BookUpdateResponse</span><span class="p">:</span>
+</span><span id="__span-21-35"><a id="__codelineno-21-35" name="__codelineno-21-35"></a>    <span class="c1"># Imagine database persistence happens here</span>
+</span><span id="__span-21-36"><a id="__codelineno-21-36" name="__codelineno-21-36"></a>    <span class="k">return</span> <span class="n">BookUpdateResponse</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>This should all be looking very familiar now. The one small difference from the previous API is we are using <code>beckett.api_post</code> instead of <code>beckett.api_get</code>.</p>
+<p>Just like before, this will have generated two new interfaces for us:</p>
+<div class="language-ts highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/js/api/types.ts</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-22-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-22-10">10</a></span>
+<span class="normal"><a href="#__codelineno-22-11">11</a></span>
+<span class="normal"><a href="#__codelineno-22-12">12</a></span>
+<span class="normal"><a href="#__codelineno-22-13">13</a></span>
+<span class="normal"><a href="#__codelineno-22-14">14</a></span>
+<span class="normal"><a href="#__codelineno-22-15">15</a></span>
+<span class="normal"><a href="#__codelineno-22-16">16</a></span>
+<span class="normal"><a href="#__codelineno-22-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="k">export</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">BooksAddRequest</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10"></a><span class="w">    </span><span class="s2">&quot;author&quot;</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11"></a><span class="p">}</span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12"></a>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13"></a><span class="k">export</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">BooksAddResponse</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14"></a><span class="w">    </span><span class="s2">&quot;status_code&quot;</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15"></a><span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16"></a><span class="w">    </span><span class="s2">&quot;author&quot;</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>You will also see the <code>POST_MAP</code> will have been updated:</p>
+<div class="language-ts highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/js/api/types.ts</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-58">58</a></span>
+<span class="normal"><a href="#__codelineno-23-59">59</a></span>
+<span class="normal"><a href="#__codelineno-23-60">60</a></span>
+<span class="normal"><a href="#__codelineno-23-61">61</a></span>
+<span class="normal"><a href="#__codelineno-23-62">62</a></span>
+<span class="normal"><a href="#__codelineno-23-63">63</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-58"><a id="__codelineno-23-58" name="__codelineno-23-58"></a><span class="k">export</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">POST_MAP</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-59"><a id="__codelineno-23-59" name="__codelineno-23-59"></a><span class="hll"><span class="w">    </span><span class="c1">// beckett_framework/src/views/books.py</span>
+</span></span><span id="__span-23-60"><a id="__codelineno-23-60" name="__codelineno-23-60"></a><span class="hll"><span class="w">    </span><span class="s2">&quot;books.add&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">BooksAddRequest</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="o">:</span><span class="w"> </span><span class="kt">BooksAddResponse</span><span class="p">}</span>
+</span></span><span id="__span-23-61"><a id="__codelineno-23-61" name="__codelineno-23-61"></a><span class="w">    </span><span class="c1">// beckett_framework/src/views/people.py</span>
+</span><span id="__span-23-62"><a id="__codelineno-23-62" name="__codelineno-23-62"></a><span class="w">    </span><span class="s2">&quot;people.post_example&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">PeoplePostExampleRequest</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="o">:</span><span class="w"> </span><span class="kt">PeoplePostExampleResponse</span><span class="p">}</span>
+</span><span id="__span-23-63"><a id="__codelineno-23-63" name="__codelineno-23-63"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Similar to the <code>GET_MAP</code>, the <code>POST_MAP</code> allows us to manage the API Client nicely.</p>
+<p>Let's add a form that uses this API to our <code>home.tsx</code> file:</p>
+<div class="language-ts highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">src/js/template/books/home.tsx</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-24-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-24-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-24-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-24-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-24-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-24-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-24-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-24-10">10</a></span>
+<span class="normal"><a href="#__codelineno-24-11">11</a></span>
+<span class="normal"><a href="#__codelineno-24-12">12</a></span>
+<span class="normal"><a href="#__codelineno-24-13">13</a></span>
+<span class="normal"><a href="#__codelineno-24-14">14</a></span>
+<span class="normal"><a href="#__codelineno-24-15">15</a></span>
+<span class="normal"><a href="#__codelineno-24-16">16</a></span>
+<span class="normal"><a href="#__codelineno-24-17">17</a></span>
+<span class="normal"><a href="#__codelineno-24-18">18</a></span>
+<span class="normal"><a href="#__codelineno-24-19">19</a></span>
+<span class="normal"><a href="#__codelineno-24-20">20</a></span>
+<span class="normal"><a href="#__codelineno-24-21">21</a></span>
+<span class="normal"><a href="#__codelineno-24-22">22</a></span>
+<span class="normal"><a href="#__codelineno-24-23">23</a></span>
+<span class="normal"><a href="#__codelineno-24-24">24</a></span>
+<span class="normal"><a href="#__codelineno-24-25">25</a></span>
+<span class="normal"><a href="#__codelineno-24-26">26</a></span>
+<span class="normal"><a href="#__codelineno-24-27">27</a></span>
+<span class="normal"><a href="#__codelineno-24-28">28</a></span>
+<span class="normal"><a href="#__codelineno-24-29">29</a></span>
+<span class="normal"><a href="#__codelineno-24-30">30</a></span>
+<span class="normal"><a href="#__codelineno-24-31">31</a></span>
+<span class="normal"><a href="#__codelineno-24-32">32</a></span>
+<span class="normal"><a href="#__codelineno-24-33">33</a></span>
+<span class="normal"><a href="#__codelineno-24-34">34</a></span>
+<span class="normal"><a href="#__codelineno-24-35">35</a></span>
+<span class="normal"><a href="#__codelineno-24-36">36</a></span>
+<span class="normal"><a href="#__codelineno-24-37">37</a></span>
+<span class="normal"><a href="#__codelineno-24-38">38</a></span>
+<span class="normal"><a href="#__codelineno-24-39">39</a></span>
+<span class="normal"><a href="#__codelineno-24-40">40</a></span>
+<span class="normal"><a href="#__codelineno-24-41">41</a></span>
+<span class="normal"><a href="#__codelineno-24-42">42</a></span>
+<span class="normal"><a href="#__codelineno-24-43">43</a></span>
+<span class="normal"><a href="#__codelineno-24-44">44</a></span>
+<span class="normal"><a href="#__codelineno-24-45">45</a></span>
+<span class="normal"><a href="#__codelineno-24-46">46</a></span>
+<span class="normal"><a href="#__codelineno-24-47">47</a></span>
+<span class="normal"><a href="#__codelineno-24-48">48</a></span>
+<span class="normal"><a href="#__codelineno-24-49">49</a></span>
+<span class="normal"><a href="#__codelineno-24-50">50</a></span>
+<span class="normal"><a href="#__codelineno-24-51">51</a></span>
+<span class="normal"><a href="#__codelineno-24-52">52</a></span>
+<span class="normal"><a href="#__codelineno-24-53">53</a></span>
+<span class="normal"><a href="#__codelineno-24-54">54</a></span>
+<span class="normal"><a href="#__codelineno-24-55">55</a></span>
+<span class="normal"><a href="#__codelineno-24-56">56</a></span>
+<span class="normal"><a href="#__codelineno-24-57">57</a></span>
+<span class="normal"><a href="#__codelineno-24-58">58</a></span>
+<span class="normal"><a href="#__codelineno-24-59">59</a></span>
+<span class="normal"><a href="#__codelineno-24-60">60</a></span>
+<span class="normal"><a href="#__codelineno-24-61">61</a></span>
+<span class="normal"><a href="#__codelineno-24-62">62</a></span>
+<span class="normal"><a href="#__codelineno-24-63">63</a></span>
+<span class="normal"><a href="#__codelineno-24-64">64</a></span>
+<span class="normal"><a href="#__codelineno-24-65">65</a></span>
+<span class="normal"><a href="#__codelineno-24-66">66</a></span>
+<span class="normal"><a href="#__codelineno-24-67">67</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">useState</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">PageProps</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./home.type&#39;</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">Container</span><span class="p">,</span><span class="w"> </span><span class="nx">Row</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-bootstrap&#39;</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="hll"><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">useGet</span><span class="p">,</span><span class="w"> </span><span class="nx">usePost</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;~/api/query&#39;</span>
+</span></span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5"></a>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">Page</span><span class="o">:</span><span class="w"> </span><span class="kt">React.FunctionComponent</span><span class="o">&lt;</span><span class="nx">PageProps</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">props</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">data</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useGet</span><span class="p">(</span><span class="s1">&#39;books.details&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;My book&#39;</span><span class="p">})</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="hll"><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">addBook</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">usePost</span><span class="p">(</span><span class="s1">&#39;books.add&#39;</span><span class="p">)</span>
+</span></span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="hll"><span class="w">    </span><span class="kd">interface</span><span class="w"> </span><span class="nx">Book</span><span class="w"> </span><span class="p">{</span>
+</span></span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="hll"><span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+</span></span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11"></a><span class="hll"><span class="w">        </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+</span></span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12"></a><span class="hll"><span class="w">    </span><span class="p">}</span>
+</span></span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13"></a><span class="hll"><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">allBooks</span><span class="p">,</span><span class="w"> </span><span class="nx">setAllBooks</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="o">&lt;</span><span class="nx">Book</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">([{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;First book&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;No one&#39;</span><span class="p">}])</span>
+</span></span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14"></a><span class="hll"><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">formName</span><span class="p">,</span><span class="w"> </span><span class="nx">setName</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15"></a><span class="hll"><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">formAuthor</span><span class="p">,</span><span class="w"> </span><span class="nx">setAuthor</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
+</span><span id="__span-24-18"><a id="__codelineno-24-18" name="__codelineno-24-18"></a><span class="w">            </span><span class="o">&lt;</span><span class="nx">Row</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;mb-4 border-bottom&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-24-19"><a id="__codelineno-24-19" name="__codelineno-24-19"></a><span class="w">                </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span><span class="w"> </span><span class="nx">React</span><span class="o">!&lt;</span><span class="err">/h1&gt;</span>
+</span><span id="__span-24-20"><a id="__codelineno-24-20" name="__codelineno-24-20"></a><span class="w">                </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span id="__span-24-21"><a id="__codelineno-24-21" name="__codelineno-24-21"></a><span class="w">                    </span><span class="nx">Here</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">props</span><span class="o">:</span><span class="p">{</span><span class="s1">&#39; &#39;</span><span class="p">}</span>
+</span><span id="__span-24-22"><a id="__codelineno-24-22" name="__codelineno-24-22"></a><span class="w">                    </span><span class="o">&lt;</span><span class="nx">code</span><span class="o">&gt;</span>
+</span><span id="__span-24-23"><a id="__codelineno-24-23" name="__codelineno-24-23"></a><span class="w">                        </span><span class="p">{</span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">props</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-24-24"><a id="__codelineno-24-24" name="__codelineno-24-24"></a><span class="w">                            </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span id="__span-24-25"><a id="__codelineno-24-25" name="__codelineno-24-25"></a><span class="w">                                </span><span class="p">{</span><span class="nx">p</span><span class="p">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">props</span><span class="p">[</span><span class="nx">p</span><span class="p">]}</span>
+</span><span id="__span-24-26"><a id="__codelineno-24-26" name="__codelineno-24-26"></a><span class="w">                            </span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span id="__span-24-27"><a id="__codelineno-24-27" name="__codelineno-24-27"></a><span class="w">                        </span><span class="p">))}</span>
+</span><span id="__span-24-28"><a id="__codelineno-24-28" name="__codelineno-24-28"></a><span class="w">                    </span><span class="o">&lt;</span><span class="err">/code&gt;</span>
+</span><span id="__span-24-29"><a id="__codelineno-24-29" name="__codelineno-24-29"></a><span class="w">                </span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span id="__span-24-30"><a id="__codelineno-24-30" name="__codelineno-24-30"></a><span class="w">                </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Book</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span id="__span-24-31"><a id="__codelineno-24-31" name="__codelineno-24-31"></a><span class="w">                </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Book</span><span class="w"> </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">author</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span id="__span-24-32"><a id="__codelineno-24-32" name="__codelineno-24-32"></a><span class="w">            </span><span class="o">&lt;</span><span class="err">/Row&gt;</span>
+</span><span id="__span-24-33"><a id="__codelineno-24-33" name="__codelineno-24-33"></a><span class="hll"><span class="w">            </span><span class="o">&lt;</span><span class="nx">Row</span><span class="o">&gt;</span>
+</span></span><span id="__span-24-34"><a id="__codelineno-24-34" name="__codelineno-24-34"></a><span class="hll"><span class="w">                </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Add</span><span class="w"> </span><span class="nx">book</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+</span></span><span id="__span-24-35"><a id="__codelineno-24-35" name="__codelineno-24-35"></a><span class="hll"><span class="w">                </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></span><span id="__span-24-36"><a id="__codelineno-24-36" name="__codelineno-24-36"></a><span class="hll"><span class="w">                    </span><span class="nx">Name</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">formName</span><span class="p">}</span><span class="w"> </span><span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">v</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setName</span><span class="p">(</span><span class="nx">v</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)}</span><span class="w"> </span><span class="o">/&gt;</span>
+</span></span><span id="__span-24-37"><a id="__codelineno-24-37" name="__codelineno-24-37"></a><span class="hll"><span class="w">                </span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span></span><span id="__span-24-38"><a id="__codelineno-24-38" name="__codelineno-24-38"></a><span class="hll"><span class="w">                </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></span><span id="__span-24-39"><a id="__codelineno-24-39" name="__codelineno-24-39"></a><span class="hll"><span class="w">                    </span><span class="nx">Author</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">formAuthor</span><span class="p">}</span><span class="w"> </span><span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">v</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setAuthor</span><span class="p">(</span><span class="nx">v</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)}</span><span class="w"> </span><span class="o">/&gt;</span>
+</span></span><span id="__span-24-40"><a id="__codelineno-24-40" name="__codelineno-24-40"></a><span class="hll"><span class="w">                </span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span></span><span id="__span-24-41"><a id="__codelineno-24-41" name="__codelineno-24-41"></a><span class="hll"><span class="w">                </span><span class="o">&lt;</span><span class="nx">button</span>
+</span></span><span id="__span-24-42"><a id="__codelineno-24-42" name="__codelineno-24-42"></a><span class="hll"><span class="w">                    </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span>
+</span></span><span id="__span-24-43"><a id="__codelineno-24-43" name="__codelineno-24-43"></a><span class="hll"><span class="w">                        </span><span class="nx">addBook</span><span class="p">.</span><span class="nx">mutate</span><span class="p">(</span>
+</span></span><span id="__span-24-44"><a id="__codelineno-24-44" name="__codelineno-24-44"></a><span class="hll"><span class="w">                            </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">formName</span><span class="p">,</span><span class="w"> </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="kt">formAuthor</span><span class="p">},</span>
+</span></span><span id="__span-24-45"><a id="__codelineno-24-45" name="__codelineno-24-45"></a><span class="hll"><span class="w">                            </span><span class="p">{</span>
+</span></span><span id="__span-24-46"><a id="__codelineno-24-46" name="__codelineno-24-46"></a><span class="hll"><span class="w">                                </span><span class="nx">onSuccess</span><span class="o">:</span><span class="w"> </span><span class="kt">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span></span><span id="__span-24-47"><a id="__codelineno-24-47" name="__codelineno-24-47"></a><span class="hll"><span class="w">                                    </span><span class="nx">allBooks</span><span class="o">?</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">response.name</span><span class="p">,</span><span class="w"> </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="kt">response.author</span><span class="p">})</span>
+</span></span><span id="__span-24-48"><a id="__codelineno-24-48" name="__codelineno-24-48"></a><span class="hll"><span class="w">                                    </span><span class="nx">setAllBooks</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">allBooks</span><span class="p">))</span>
+</span></span><span id="__span-24-49"><a id="__codelineno-24-49" name="__codelineno-24-49"></a><span class="hll"><span class="w">                                </span><span class="p">},</span>
+</span></span><span id="__span-24-50"><a id="__codelineno-24-50" name="__codelineno-24-50"></a><span class="hll"><span class="w">                                </span><span class="nx">onError</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">addBook</span><span class="p">.</span><span class="nx">error</span><span class="p">),</span>
+</span></span><span id="__span-24-51"><a id="__codelineno-24-51" name="__codelineno-24-51"></a><span class="hll"><span class="w">                            </span><span class="p">},</span>
+</span></span><span id="__span-24-52"><a id="__codelineno-24-52" name="__codelineno-24-52"></a><span class="hll"><span class="w">                        </span><span class="p">)</span>
+</span></span><span id="__span-24-53"><a id="__codelineno-24-53" name="__codelineno-24-53"></a><span class="hll"><span class="w">                    </span><span class="p">}</span>
+</span></span><span id="__span-24-54"><a id="__codelineno-24-54" name="__codelineno-24-54"></a><span class="hll"><span class="w">                </span><span class="o">&gt;</span>
+</span></span><span id="__span-24-55"><a id="__codelineno-24-55" name="__codelineno-24-55"></a><span class="hll"><span class="w">                    </span><span class="nx">Add</span>
+</span></span><span id="__span-24-56"><a id="__codelineno-24-56" name="__codelineno-24-56"></a><span class="hll"><span class="w">                </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+</span></span><span id="__span-24-57"><a id="__codelineno-24-57" name="__codelineno-24-57"></a><span class="hll"><span class="w">            </span><span class="o">&lt;</span><span class="err">/Row&gt;</span>
+</span></span><span id="__span-24-58"><a id="__codelineno-24-58" name="__codelineno-24-58"></a><span class="hll"><span class="w">            </span><span class="o">&lt;</span><span class="nx">Row</span><span class="o">&gt;</span>
+</span></span><span id="__span-24-59"><a id="__codelineno-24-59" name="__codelineno-24-59"></a><span class="hll"><span class="w">                </span><span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+</span></span><span id="__span-24-60"><a id="__codelineno-24-60" name="__codelineno-24-60"></a><span class="hll"><span class="w">                </span><span class="p">{</span><span class="nx">allBooks</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">book</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">book</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="p">{</span><span class="nx">book</span><span class="p">.</span><span class="nx">author</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/li&gt;)}</span>
+</span></span><span id="__span-24-61"><a id="__codelineno-24-61" name="__codelineno-24-61"></a><span class="hll"><span class="w">                </span><span class="o">&lt;</span><span class="err">/ul&gt;</span>
+</span></span><span id="__span-24-62"><a id="__codelineno-24-62" name="__codelineno-24-62"></a><span class="hll"><span class="w">            </span><span class="o">&lt;</span><span class="err">/Row&gt;</span>
+</span></span><span id="__span-24-63"><a id="__codelineno-24-63" name="__codelineno-24-63"></a><span class="w">        </span><span class="o">&lt;</span><span class="err">/Container&gt;</span>
+</span><span id="__span-24-64"><a id="__codelineno-24-64" name="__codelineno-24-64"></a><span class="w">    </span><span class="p">)</span>
+</span><span id="__span-24-65"><a id="__codelineno-24-65" name="__codelineno-24-65"></a><span class="p">}</span>
+</span><span id="__span-24-66"><a id="__codelineno-24-66" name="__codelineno-24-66"></a>
+</span><span id="__span-24-67"><a id="__codelineno-24-67" name="__codelineno-24-67"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Page</span>
+</span></code></pre></div></td></tr></table></div>
+<p>I appreciate that quite a lot of lines have been added here. This may look a bit intimdating if you're not used to React but don't worry it'll all make sense.</p>
+<p>Let's break down each section bit by bit.</p>
+<div class="language-ts highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">addBook</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">usePost</span><span class="p">(</span><span class="s1">&#39;books.add&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>The <code>usePost</code> hook behaves very differently to the <code>useGet</code> hook. This is because we often want to trigger to hook after a state change or button press.</p>
+<p>Under the hood, the <code>usePost</code> hook provides a <a href="https://tanstack.com/query/latest">TanStack Query</a> hook for managing the API request.</p>
+<div class="language-ts highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">Book</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="p">}</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">allBooks</span><span class="p">,</span><span class="w"> </span><span class="nx">setAllBooks</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="o">&lt;</span><span class="nx">Book</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">([{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;First book&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;No one&#39;</span><span class="p">}])</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">formName</span><span class="p">,</span><span class="w"> </span><span class="nx">setName</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">formAuthor</span><span class="p">,</span><span class="w"> </span><span class="nx">setAuthor</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>This code sets ups some state using React's state library. We'll use it for the form and the list on the page.</p>
+<div class="language-ts highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="o">&lt;</span><span class="nx">button</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">        </span><span class="nx">addBook</span><span class="p">.</span><span class="nx">mutate</span><span class="p">(</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">            </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">formName</span><span class="p">,</span><span class="w"> </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="kt">formAuthor</span><span class="p">},</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">                </span><span class="nx">onSuccess</span><span class="o">:</span><span class="w"> </span><span class="kt">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">                    </span><span class="nx">allBooks</span><span class="o">?</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">response.name</span><span class="p">,</span><span class="w"> </span><span class="nx">author</span><span class="o">:</span><span class="w"> </span><span class="kt">response.author</span><span class="p">})</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">                    </span><span class="nx">setAllBooks</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">allBooks</span><span class="p">))</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="w">                </span><span class="p">},</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="w">                </span><span class="nx">onError</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">addBook</span><span class="p">.</span><span class="nx">error</span><span class="p">),</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="w">        </span><span class="p">)</span>
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="o">&gt;</span>
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="w">    </span><span class="nx">Add</span>
+</span><span id="__span-27-16"><a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="o">&lt;</span><span class="err">/button&gt;</span>
+</span></code></pre></div>
+<p>The <code>button</code> logic is the most interesting part of this change - it is where we trigger our POST API request!</p>
+<p>The <a href="https://tanstack.com/query/v4/docs/react/guides/mutations#promises">mutate</a> method is the standard TanStack one, but Beckett forces the input data to match the <code>BookAddRequest</code> interface it generated earlier.</p>
+<p>The rest of this code follows the standard <code>useMutation</code> side effects from Tanstack which you can read about <a href="https://tanstack.com/query/v4/docs/react/guides/mutations#mutation-side-effects">here</a>.</p>
+<p>When you read the page at <a href="http://localhost:9000/books/">http://localhost:9000/books/</a> you will notice the new form is available. If you enter some content in it and hit "Add" - the UI updates, but if you open your network tab in the developer console (right click -&gt; Inspect -&gt; Network) you will see API requests being issued to the Flask server when you click the button.</p>
+<p>Want to see how the input validation works in real time? Set the input fields to be empty and hit enter, and you will see some API errors in the console tab.</p>
+<h2 id="refreshing-requests">Refreshing requests</h2>
+<p>If you want to refresh a request you can do this using the <code>useInvalidate</code> hook:</p>
+<div class="language-ts highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">invalidate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useInvalidate</span><span class="p">()</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">    </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">invalidate</span><span class="p">(</span><span class="s1">&#39;books.details&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;New book&#39;</span><span class="p">})</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="p">}</span><span class="o">&gt;</span><span class="nx">Update</span><span class="w"> </span><span class="nx">book</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+</span></code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
