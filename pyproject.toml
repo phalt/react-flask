@@ -23,7 +23,7 @@ ruff = "^0.0.267"
 mkdocs = "^1.4.3"
 mkdocs-material = "^9.1.13"
 pydantic = "^2.0.3"
-cattrs = "^23.1.2"
+typing-extensions = "^4.7.1"
 
 
 [build-system]

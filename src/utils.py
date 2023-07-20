@@ -14,12 +14,7 @@ def unwrap(x: Optional[X]) -> X:
 
 
 @app.template_filter()
-def json(q, default=None):  # type: ignore
+def json(q):  # type: ignore
     import json
 
     return json.dumps(q)
-
-
-@app.template_filter()
-def pydantic_model_dump(model):  # type: ignore
-    return model.model_dump_json()

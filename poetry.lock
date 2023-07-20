@@ -13,25 +13,6 @@ files = [
 ]
 
 [[package]]
-name = "attrs"
-version = "23.1.0"
-description = "Classes Without Boilerplate"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "attrs-23.1.0-py3-none-any.whl", hash = "sha256:1f28b4522cdc2fb4256ac1a020c78acf9cba2c6b461ccd2c126f3aa8e8335d04"},
-    {file = "attrs-23.1.0.tar.gz", hash = "sha256:6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"},
-]
-
-[package.extras]
-cov = ["attrs[tests]", "coverage[toml] (>=5.3)"]
-dev = ["attrs[docs,tests]", "pre-commit"]
-docs = ["furo", "myst-parser", "sphinx", "sphinx-notfound-page", "sphinxcontrib-towncrier", "towncrier", "zope-interface"]
-tests = ["attrs[tests-no-zope]", "zope-interface"]
-tests-no-zope = ["cloudpickle", "hypothesis", "mypy (>=1.1.1)", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "pytest-xdist[psutil]"]
-
-[[package]]
 name = "black"
 version = "23.3.0"
 description = "The uncompromising code formatter."
@@ -90,30 +71,6 @@ files = [
     {file = "blinker-1.6.2-py3-none-any.whl", hash = "sha256:c3d739772abb7bc2860abf5f2ec284223d9ad5c76da018234f6f50d6f31ab1f0"},
     {file = "blinker-1.6.2.tar.gz", hash = "sha256:4afd3de66ef3a9f8067559fb7a1cbe555c17dcbe15971b05d1b625c3e7abe213"},
 ]
-
-[[package]]
-name = "cattrs"
-version = "23.1.2"
-description = "Composable complex class support for attrs and dataclasses."
-category = "main"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "cattrs-23.1.2-py3-none-any.whl", hash = "sha256:b2bb14311ac17bed0d58785e5a60f022e5431aca3932e3fc5cc8ed8639de50a4"},
-    {file = "cattrs-23.1.2.tar.gz", hash = "sha256:db1c821b8c537382b2c7c66678c3790091ca0275ac486c76f3c8f3920e83c657"},
-]
-
-[package.dependencies]
-attrs = ">=20"
-
-[package.extras]
-bson = ["pymongo (>=4.2.0,<5.0.0)"]
-cbor2 = ["cbor2 (>=5.4.6,<6.0.0)"]
-msgpack = ["msgpack (>=1.0.2,<2.0.0)"]
-orjson = ["orjson (>=3.5.2,<4.0.0)"]
-pyyaml = ["PyYAML (>=6.0,<7.0)"]
-tomlkit = ["tomlkit (>=0.11.4,<0.12.0)"]
-ujson = ["ujson (>=5.4.0,<6.0.0)"]
 
 [[package]]
 name = "certifi"
@@ -1113,4 +1070,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11.2"
-content-hash = "59044ecfbff00dcf008f24115b6038abc25f73e6f68af77efb04db34a92d48ef"
+content-hash = "fc4c3f3570369bca99e62127695713e2d8aee42d27fde6066be258d095e3a971"

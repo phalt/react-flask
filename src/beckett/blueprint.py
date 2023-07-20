@@ -50,7 +50,6 @@ class BeckettBlueprint(flask.Blueprint):
             self.template = "beckett_page.jinja2"
 
         def __call__(self, view_function):
-            from src.beckett.converters.typescript import converter
             from src.beckett.types.types_manager import api_route_type_manager
 
             self.view_function = view_function
@@ -80,7 +79,7 @@ class BeckettBlueprint(flask.Blueprint):
                 html = flask.render_template(
                     self.template,
                     __render_react_response=response,
-                    props=converter.unstructure(response),
+                    props=response.model_dump_json(),
                     **build_render_context_for_base_template(),
                     **react_context,
                 )

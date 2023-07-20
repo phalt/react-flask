@@ -178,3 +178,8 @@ class NotFound(APIResponse):
 
 class InternalServerError(APIResponse):
     status_code: int = 500
+
+
+class PydanticValidationResponse(APIResponse):
+    status_code: int = 500
+    message: typing.List[str]

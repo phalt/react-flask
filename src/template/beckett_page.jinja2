@@ -9,6 +9,6 @@
         import {renderReactPage} from '{{ es_module('src/js/beckett_page.tsx') }}'
         import Page from '{{ es_module(react_entrypoint_filename) }}'
 
-        renderReactPage(Page, {{ props | pydantic_model_dump | json | safe }}, {{ base_data | json | safe }})
+        renderReactPage(Page, {{ props | json | safe }}, {{ base_data | json | safe }})
     </script>
 {% endblock %}
