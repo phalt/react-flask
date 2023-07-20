@@ -22,8 +22,6 @@ However, setting up a smooth and efficient development environment that integrat
 
 Thankfully, Beckett steps in to solve this challenge by through it's sophisticated types manager.
 
-Wanna learn more? Start with the [install step](/install/) to get started.
-
 
 ## Currently in development
 
