@@ -29,7 +29,7 @@ const target = ['chrome100', 'firefox100']
 const minify = env !== 'development'
 
 const entryPoints = [
-    'src/js/beckett_page.tsx',
+    'src/js/react_page.tsx',
 ]
 
 // Crawl the js template dir and add everything that looks like a Page as an entrypoint

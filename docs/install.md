@@ -25,4 +25,4 @@ make web
 
 This will start up the development server.
 
-Now you can start the [tutorial](/tutorial/) to build your first Beckett page.
+Now you can start the [tutorial](/tutorial/) to build your first RF page.

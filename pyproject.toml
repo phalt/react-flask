@@ -3,9 +3,9 @@ profile = "black"
 
 
 [tool.poetry]
-name = "beckett"
+name = "react-flask"
 version = "0.1.0"
-description = "A strongly-linked Python & Typescript Framework"
+description = "Fully typed Flask and React applications"
 authors = ["Paul Hallett <paulandrewhallett@gmail.com>"]
 readme = "README.md"
 
